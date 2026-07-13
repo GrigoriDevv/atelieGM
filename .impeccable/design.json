@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-13T01:20:12.145488+00:00",
+  "title": "Design System: Ateliê GM",
+  "extensions": {
+    "colorMeta": {
+      "linen-paper": {
+        "role": "neutral",
+        "displayName": "Linen Paper",
+        "canonical": "#faf8f5",
+        "tonalRamp": [
+          "#3d3630",
+          "#5c554d",
+          "#7a7268",
+          "#a89f94",
+          "#d4cbc0",
+          "#ebe3d8",
+          "#f3ede6",
+          "#faf8f5"
+        ]
+      },
+      "thread-gold": {
+        "role": "primary",
+        "displayName": "Thread Gold",
+        "canonical": "#c4a882",
+        "tonalRamp": [
+          "#5c4a32",
+          "#7a6342",
+          "#987a58",
+          "#b89772",
+          "#c4a882",
+          "#d4c0a0",
+          "#e8dcc8",
+          "#f5efe6"
+        ]
+      },
+      "sage-leaf": {
+        "role": "secondary",
+        "displayName": "Sage Leaf",
+        "canonical": "#8faf9a",
+        "tonalRamp": [
+          "#3d5244",
+          "#56705c",
+          "#6f8e76",
+          "#8faf9a",
+          "#a8c4b0",
+          "#c2d8c8",
+          "#dceae0",
+          "#eef5f0"
+        ]
+      },
+      "stitch-ink": {
+        "role": "neutral",
+        "displayName": "Stitch Ink",
+        "canonical": "#3d3630",
+        "tonalRamp": [
+          "#1f1b18",
+          "#3d3630",
+          "#5c554d",
+          "#7a7268",
+          "#9a9288",
+          "#c4bbb0",
+          "#e8e0d6",
+          "#faf8f5"
+        ]
+      },
+      "whatsapp": {
+        "role": "tertiary",
+        "displayName": "WhatsApp Green",
+        "canonical": "#25d366",
+        "tonalRamp": [
+          "#0d5c2e",
+          "#128c45",
+          "#1aad52",
+          "#25d366",
+          "#4dde80",
+          "#7ae8a3",
+          "#b3f2cb",
+          "#e6faf0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and long copy."
+      }
+    },
+    "shadows": [
+      {
+        "name": "media-lift",
+        "value": "0 10px 30px rgba(61, 54, 48, 0.12)",
+        "purpose": "Featured photography."
+      },
+      {
+        "name": "hover-card",
+        "value": "0 4px 16px rgba(61, 54, 48, 0.1)",
+        "purpose": "Interactive card hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Hero and FAB entrances."
+      },
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "State and reveal transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Catalog Primary Button",
+      "kind": "button",
+      "refersTo": "button-catalog",
+      "description": "Primary path: choose a piece in the catalog.",
+      "html": "<button class=\"ds-btn-catalog\">Ver catálogo</button>",
+      "css": ".ds-btn-catalog{background:#c4a882;color:#3d3630;padding:12px 28px;border:none;border-radius:9999px;font:500 1rem/1 DM Sans,sans-serif;cursor:pointer;transition:background .2s cubic-bezier(0.25,1,0.5,1),transform .12s}.ds-btn-catalog:hover{background:#b89772}.ds-btn-catalog:focus-visible{outline:3px solid rgba(196,168,130,.5)}.ds-btn-catalog:active{transform:scale(.97)}"
+    },
+    {
+      "name": "WhatsApp Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Secondary path: open WhatsApp for a quote.",
+      "html": "<button class=\"ds-btn-wa\">WhatsApp</button>",
+      "css": ".ds-btn-wa{background:#25d366;color:#fff;padding:12px 28px;border:none;border-radius:9999px;font:500 1rem/1 DM Sans,sans-serif;box-shadow:0 4px 14px rgba(37,211,102,.3);cursor:pointer;transition:background .2s}.ds-btn-wa:hover{background:#1ebe5a}.ds-btn-wa:focus-visible{outline:3px solid rgba(37,211,102,.45)}.ds-btn-wa:active{transform:scale(.97)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Tertiary navigation actions.",
+      "html": "<button class=\"ds-btn-outline\">Ver galeria</button>",
+      "css": ".ds-btn-outline{background:#faf8f5;color:#3d3630;padding:12px 28px;border:1px solid rgba(61,54,48,.1);border-radius:9999px;font:500 1rem/1 DM Sans,sans-serif;cursor:pointer;transition:border-color .2s,background .2s}.ds-btn-outline:hover{border-color:#c4a882;background:#f3ede6}.ds-btn-outline:focus-visible{outline:3px solid rgba(196,168,130,.5)}"
+    },
+    {
+      "name": "Soft Badge",
+      "kind": "chip",
+      "refersTo": "badge-soft",
+      "description": "Trust or category chips.",
+      "html": "<span class=\"ds-badge\">100% artesanal</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9999px;border:1px solid rgba(61,54,48,.1);background:#fff;color:#5c554d;font:500 .75rem/1 DM Sans,sans-serif}"
+    },
+    {
+      "name": "Surface Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Product or decision container.",
+      "html": "<div class=\"ds-card\"><h3>Fraldário bordado</h3><p>Peça sob encomenda, feita à mão.</p></div>",
+      "css": ".ds-card{background:#fff;color:#3d3630;border:1px solid rgba(61,54,48,.1);border-radius:20px;padding:24px;box-shadow:none;transition:box-shadow .2s,transform .2s}.ds-card:hover{box-shadow:0 4px 16px rgba(61,54,48,.1);transform:translateY(-2px)}.ds-card h3{font:600 1.25rem/1.3 Cormorant Garamond,Georgia,serif;margin:0 0 8px}.ds-card p{font:400 .875rem/1.6 DM Sans,sans-serif;color:#5c554d;margin:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Ponto Delicado",
+    "overview": "The visual system should feel like holding a finished embroidery up to soft daylight: quiet linen, a single gold thread catching the eye, sage as a calm secondary voice. Personality is delicado · afetuoso · exclusivo. Photography and craft detail carry belief; decorative chrome does not.",
+    "keyCharacteristics": [
+      "Linen field + thread-gold emphasis + sage accent",
+      "Serif display for emotion; sans for clarity",
+      "Catalog primary; WhatsApp secondary",
+      "Flat-by-default; soft lift on hover/media",
+      "Scarce motion: hero entrance + list stagger"
+    ],
+    "rules": [
+      {
+        "name": "The Thread Budget Rule",
+        "body": "Thread Gold appears on ≤10% of any viewport.",
+        "section": "colors"
+      },
+      {
+        "name": "The WhatsApp Lane Rule",
+        "body": "Green means chat. Never use WhatsApp green for brand decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Label Rule",
+        "body": "Prefer weight and color over uppercase tracking for section cues.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces rest flat. Shadow responds to state or featured photography.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do lead the hero with catalog selection, WhatsApp as secondary.",
+      "Do put real stitch/fabric photography in hero, catalog, and gallery.",
+      "Do keep body text ≥4.5:1 on linen.",
+      "Do use ink text on gold buttons for WCAG contrast."
+    ],
+    "donts": [
+      "Don't look like a startup landing page: purple gradients, identical icon cards, SaaS marketing grammar.",
+      "Don't use generic AI boutique templates.",
+      "Don't use border-left greater than 1px as a colored accent stripe.",
+      "Don't put uppercase tracked eyebrows on every section.",
+      "Don't gate content behind opacity:0 without a visible default.",
+      "Don't ship placeholder meta-copy to visitors."
+    ]
+  }
+}

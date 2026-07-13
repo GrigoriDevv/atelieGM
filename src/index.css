@@ -23,6 +23,7 @@
   --color-ring: var(--ring);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-placeholder-end: var(--placeholder-end);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -33,6 +34,13 @@
 
 :root {
   --radius: 1rem;
+  --header-offset: 5.5rem;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-instant: 120ms;
+  --duration-state: 240ms;
+  --duration-layout: 420ms;
+  --duration-entrance: 680ms;
   /* Ateliê GM — linen / embroidery palette */
   --background: #faf8f5;
   --foreground: #3d3630;
@@ -41,19 +49,21 @@
   --popover: #ffffff;
   --popover-foreground: #3d3630;
   --primary: #c4a882;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #3d3630;
   --secondary: #f3ede6;
   --secondary-foreground: #3d3630;
   --muted: #f3ede6;
-  --muted-foreground: #7a7268;
+  --muted-foreground: #5c554d;
   --accent: #8faf9a;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #3d3630;
   --destructive: #c45c5c;
   --border: rgba(61, 54, 48, 0.1);
   --input: rgba(61, 54, 48, 0.14);
   --ring: #c4a882;
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
+  --placeholder-end: #ebe3d8;
+  --tier-bebe: #d4a5a5;
 }
 
 @layer base {
@@ -77,18 +87,113 @@
   }
 }
 
-/* Reveal on scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+@layer utilities {
+  .pt-header {
+    padding-top: var(--header-offset);
+  }
+
+  .to-placeholder {
+    --tw-gradient-to: var(--placeholder-end);
+  }
 }
 
-.reveal.is-visible {
+/* Hero signature entrance — one choreographed moment */
+.hero-enter {
+  animation: hero-rise var(--duration-entrance) var(--ease-out-expo) both;
+}
+
+.hero-enter-delay-1 {
+  animation-delay: 80ms;
+}
+
+.hero-enter-delay-2 {
+  animation-delay: 160ms;
+}
+
+.hero-enter-delay-3 {
+  animation-delay: 240ms;
+}
+
+.hero-enter-delay-4 {
+  animation-delay: 320ms;
+}
+
+.hero-media-enter {
+  animation: hero-media var(--duration-entrance) var(--ease-out-expo) both;
+  animation-delay: 120ms;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-media {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Scroll reveals: visible by default; only hide when motion JS is ready */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html[data-motion="ready"] .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(0.875rem);
+}
+
+html[data-motion="ready"] .reveal {
+  transition:
+    opacity var(--duration-layout) var(--ease-out-quart),
+    transform var(--duration-layout) var(--ease-out-quart);
+}
+
+html[data-motion="ready"] .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* List / grid stagger — siblings only */
+html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
+  transition-delay: calc(var(--i, 0) * 55ms);
+}
+
+/* FAB entrance */
+.fab-enter {
+  animation: fab-in var(--duration-layout) var(--ease-out-expo) both;
+}
+
+@keyframes fab-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Press feedback for primary actions */
+[data-slot="button"]:active:not(:disabled) {
+  transform: scale(0.97);
+  transition: transform var(--duration-instant) var(--ease-out-quart);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -96,9 +201,22 @@
     scroll-behavior: auto;
   }
 
-  .reveal {
+  .hero-enter,
+  .hero-media-enter,
+  .fab-enter {
+    animation: none;
+  }
+
+  html[data-motion="ready"] .reveal,
+  html[data-motion="ready"] .reveal:not(.is-visible),
+  html[data-motion="ready"] .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;
+    filter: none;
+  }
+
+  [data-slot="button"]:active:not(:disabled) {
+    transform: none;
   }
 }

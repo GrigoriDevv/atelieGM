@@ -40,7 +40,7 @@ export default function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all',
         scrolled
-          ? 'border-b border-border/80 bg-background/90 py-3 shadow-sm backdrop-blur-md'
+          ? 'border-b border-border/80 bg-background/95 py-3 shadow-sm backdrop-blur-sm'
           : 'py-4',
       )}
     >

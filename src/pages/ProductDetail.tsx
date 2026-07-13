@@ -23,10 +23,10 @@ const categoryLabels = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c.title]),
 ) as Record<CategoryId, string>
 
-const tierBorder: Record<QualityTierId, string> = {
-  bebe: 'border-l-[#d4a5a5]',
-  'dia-a-dia': 'border-l-accent',
-  'super-luxo': 'border-l-primary',
+const tierAccent: Record<QualityTierId, string> = {
+  bebe: 'bg-[color-mix(in_srgb,var(--tier-bebe)_22%,transparent)] text-[color-mix(in_srgb,var(--tier-bebe)_72%,var(--foreground))]',
+  'dia-a-dia': 'bg-accent/15 text-accent',
+  'super-luxo': 'bg-primary/15 text-primary',
 }
 
 export default function ProductDetail() {
@@ -49,7 +49,7 @@ export default function ProductDetail() {
 
   if (!item) {
     return (
-      <Section className="pt-28 text-center">
+      <Section className="pt-header text-center">
         <Container>
           <h1 className="font-display text-3xl font-semibold">Produto não encontrado</h1>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
@@ -71,7 +71,7 @@ export default function ProductDetail() {
     : undefined
 
   return (
-    <Section id="produto" className="pt-28">
+    <Section id="produto" className="pt-header">
       <Container>
         <nav
           className="mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
@@ -90,10 +90,11 @@ export default function ProductDetail() {
 
         <div className="grid items-start gap-8 md:grid-cols-2 md:gap-12">
           <div
-            className="flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl bg-linear-to-br from-secondary to-[#ebe3d8] text-muted-foreground shadow-md"
-            aria-hidden="true"
+            className="flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground shadow-md"
+            role="img"
+            aria-label={`Espaço reservado para foto de ${item.name}`}
           >
-            <ImageIcon className="size-14 opacity-50" />
+            <ImageIcon className="size-14 opacity-50" aria-hidden="true" />
             <span className="text-sm">Foto do produto</span>
           </div>
 
@@ -107,7 +108,7 @@ export default function ProductDetail() {
               )}
             </div>
 
-            <h1 className="font-display text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl lg:text-5xl">
               {item.name}
             </h1>
             <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{item.description}</p>
@@ -139,12 +140,27 @@ export default function ProductDetail() {
                       aria-checked={isSelected}
                       onClick={() => setSelectedTier(tier)}
                       className={cn(
-                        'rounded-xl border border-border border-l-[3px] bg-card p-4 text-left transition-all',
-                        tierBorder[tier.id],
-                        isSelected && 'border-primary shadow-[0_0_0_1px_var(--primary)]',
+                        'rounded-xl border border-border bg-card p-4 text-left transition-[border-color,box-shadow,background-color] duration-200',
+                        isSelected
+                          ? 'border-primary bg-primary/5 shadow-[0_0_0_1px_var(--primary)]'
+                          : 'hover:border-primary/50',
                       )}
                     >
-                      <span className="font-display text-lg font-semibold">{tier.label}</span>
+                      <span className="flex flex-wrap items-center gap-2">
+                        <span className="font-display text-lg font-semibold">{tier.label}</span>
+                        <span
+                          className={cn(
+                            'rounded-full px-2 py-0.5 text-[0.6875rem] font-medium',
+                            tierAccent[tier.id],
+                          )}
+                        >
+                          {tier.id === 'bebe'
+                            ? 'Suave'
+                            : tier.id === 'dia-a-dia'
+                              ? 'Diário'
+                              : 'Premium'}
+                        </span>
+                      </span>
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         {tier.description}
                       </p>
@@ -182,10 +198,10 @@ export default function ProductDetail() {
               {related.map((relatedItem) => (
                 <Card
                   key={relatedItem.id}
-                  className="overflow-hidden py-0 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                  className="overflow-hidden py-0 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <Link to={getProductPath(relatedItem.id)}>
-                    <div className="flex aspect-video items-center justify-center bg-linear-to-br from-secondary to-[#ebe3d8] text-muted-foreground">
+                    <div className="flex aspect-video items-center justify-center bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
                       <ImageIcon className="size-7 opacity-60" />
                     </div>
                     <CardContent className="p-4">

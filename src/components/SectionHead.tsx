@@ -24,18 +24,18 @@ export default function SectionHead({
       )}
     >
       {eyebrow && (
-        <span className="reveal mb-3 inline-block text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+        <span className="reveal mb-3 inline-block text-sm font-medium text-accent">
           {eyebrow}
         </span>
       )}
-      <h2 className="reveal font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+      <h2 className="reveal font-display text-3xl font-semibold tracking-tight text-balance text-foreground md:text-4xl">
         {title}
       </h2>
       {subtitle && (
         <p
           className={cn(
-            'reveal mt-3 text-base leading-relaxed text-muted-foreground md:text-lg',
-            center && 'mx-auto max-w-xl',
+            'reveal mt-3 max-w-prose text-base leading-relaxed text-pretty text-muted-foreground md:text-lg',
+            center && 'mx-auto',
           )}
         >
           {subtitle}

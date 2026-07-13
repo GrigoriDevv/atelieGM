@@ -123,9 +123,7 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: NavLink[] = [
-  { href: '#top', label: 'Início' },
-  { href: '#categorias', label: 'Categorias' },
-  { href: '#catalogo', label: 'Catálogo' },
+  { href: '#catalogo', label: 'Peças' },
   { href: '#galeria', label: 'Galeria' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#contato', label: 'Contato' },

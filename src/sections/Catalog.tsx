@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { ImageIcon } from 'lucide-react'
 import { CATEGORIES, type CategoryId } from '@/config/brand'
@@ -31,18 +31,16 @@ export default function Catalog() {
     <Section id="catalogo" soft>
       <Container>
         <SectionHead
-          eyebrow="Catálogo"
           title="Escolha a peça ideal"
-          subtitle="Clique no produto para ver os detalhes, escolher a linha de qualidade e pedir orçamento pelo WhatsApp."
-          center
+          subtitle="Abra o produto para ver detalhes, escolher a linha de qualidade e pedir orçamento pelo WhatsApp."
         />
 
         <Tabs
           value={activeFilter}
           onValueChange={(value) => setActiveFilter(value as CatalogFilter)}
-          className="reveal mb-8"
+          className="mb-8"
         >
-          <TabsList className="mx-auto flex h-auto w-full flex-wrap justify-center gap-2 bg-transparent p-0 sm:w-auto">
+          <TabsList className="flex h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0 sm:w-auto">
             <TabsTrigger
               value="todos"
               className="rounded-full border border-border bg-card px-4 py-2 data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -61,11 +59,15 @@ export default function Catalog() {
           </TabsList>
         </Tabs>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <Card key={item.id} className="reveal overflow-hidden py-0 transition-all hover:-translate-y-0.5 hover:shadow-md">
+        <div className="stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, index) => (
+            <Card
+              key={item.id}
+              className="reveal overflow-hidden py-0 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              style={{ '--i': Math.min(index, 8) } as CSSProperties}
+            >
               <Link to={getProductPath(item.id)} className="flex h-full flex-col">
-                <div className="flex aspect-video items-center justify-center bg-linear-to-br from-secondary to-[#ebe3d8] text-muted-foreground">
+                <div className="flex aspect-[4/3] items-center justify-center bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
                   <ImageIcon className="size-8 opacity-60" />
                 </div>
                 <CardContent className="flex flex-1 flex-col gap-3 p-5">
