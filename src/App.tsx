@@ -32,6 +32,8 @@ function ScrollToHash() {
 
 function AppShell() {
   useReveal()
+  const { pathname } = useLocation()
+  const onProductPage = pathname.startsWith('/produto/')
 
   return (
     <>
@@ -42,7 +44,7 @@ function AppShell() {
         Ir para o conteúdo
       </a>
       <Navbar />
-      <main>
+      <main className={onProductPage ? undefined : 'pb-fab'}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/produto/:id" element={<ProductDetail />} />

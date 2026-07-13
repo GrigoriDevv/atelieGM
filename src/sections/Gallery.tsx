@@ -19,37 +19,37 @@ export default function Gallery() {
           subtitle="Um olhar sobre o acabamento artesanal — cada trabalho é único."
         />
 
-        <div className="stagger grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="stagger grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 md:gap-4">
           {GALLERY_ITEMS.map((item, index) => {
             const featured = index === 0
             return (
               <figure
                 key={item.id}
                 className={cn(
-                  'reveal relative overflow-hidden rounded-2xl bg-secondary',
+                  'reveal relative overflow-hidden rounded-xl bg-secondary sm:rounded-2xl',
                   featured
                     ? 'col-span-2 row-span-2 aspect-square md:aspect-auto md:min-h-[28rem]'
                     : 'aspect-square',
                 )}
                 style={{ '--i': Math.min(index, 5) } as CSSProperties}
               >
-                <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-secondary to-placeholder-end p-4 text-center">
+                <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-secondary to-placeholder-end p-3 text-center sm:p-4">
                   <ImageIcon
                     className={cn(
                       'text-muted-foreground/60',
-                      featured ? 'size-12' : 'size-8',
+                      featured ? 'size-10 sm:size-12' : 'size-6 sm:size-8',
                     )}
                   />
                   <span
                     className={cn(
                       'text-muted-foreground',
-                      featured ? 'max-w-[14rem] text-sm' : 'text-xs',
+                      featured ? 'max-w-[14rem] text-xs sm:text-sm' : 'text-[0.65rem] sm:text-xs',
                     )}
                   >
                     {item.alt}
                   </span>
                 </div>
-                <Badge className="absolute bottom-3 left-3 rounded-full bg-card/95 text-xs font-medium tracking-wide text-foreground hover:bg-card/95">
+                <Badge className="absolute bottom-2 left-2 rounded-full bg-card/95 text-[0.65rem] font-medium tracking-wide text-foreground hover:bg-card/95 sm:bottom-3 sm:left-3 sm:text-xs">
                   {categoryLabels[item.category]}
                 </Badge>
               </figure>

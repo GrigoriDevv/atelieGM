@@ -17,7 +17,7 @@ export default function Contact() {
               Envie uma mensagem pelo WhatsApp e conte o que você imagina. Respondemos com
               carinho e agilidade para montar seu orçamento.
             </p>
-            <Button asChild variant="whatsapp" size="lg" className="mt-8">
+            <Button asChild variant="whatsapp" size="lg" className="mt-8 w-full touch-target sm:w-auto">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <IconWhatsApp className="size-5" />
                 Iniciar conversa no WhatsApp

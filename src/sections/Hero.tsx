@@ -14,34 +14,37 @@ export default function Hero() {
   const titleEnd = words.slice(-2).join(' ')
 
   return (
-    <section id="top" className="relative flex min-h-svh items-center overflow-hidden pt-header pb-16 md:pb-24">
+    <section
+      id="top"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-header pb-10 sm:pb-16 md:min-h-svh md:pb-24"
+    >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(143,175,154,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(196,168,130,0.12),transparent_45%)]"
         aria-hidden="true"
       />
 
-      <Container className="relative grid items-center gap-12 md:grid-cols-2 md:gap-16">
-        <div className="max-w-xl">
-          <p className="hero-enter hero-enter-delay-1 mb-4 text-sm font-medium text-accent">
+      <Container className="relative grid items-center gap-8 md:grid-cols-2 md:gap-16">
+        <div className="order-1 max-w-xl">
+          <p className="hero-enter hero-enter-delay-1 mb-3 text-sm font-medium text-accent sm:mb-4">
             Feito à mão sob encomenda
           </p>
 
-          <h1 className="hero-enter hero-enter-delay-2 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-balance md:text-5xl lg:text-6xl">
+          <h1 className="hero-enter hero-enter-delay-2 font-display text-[2rem] font-semibold leading-[1.12] tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
             {titleStart} <em className="text-primary not-italic md:italic">{titleEnd}</em>
           </h1>
 
-          <p className="hero-enter hero-enter-delay-3 mt-5 text-lg leading-relaxed text-muted-foreground">
+          <p className="hero-enter hero-enter-delay-3 mt-4 text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
             {BRAND.description}
           </p>
 
-          <div className="hero-enter hero-enter-delay-4 mt-8 flex flex-wrap gap-3">
-            <Button asChild variant="default" size="lg">
+          <div className="hero-enter hero-enter-delay-4 mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <Button asChild variant="default" size="lg" className="w-full touch-target sm:w-auto">
               <a href="#catalogo">
                 Ver catálogo
                 <ArrowRight className="size-4" />
               </a>
             </Button>
-            <Button asChild variant="whatsapp" size="lg">
+            <Button asChild variant="whatsapp" size="lg" className="w-full touch-target sm:w-auto">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <IconWhatsApp className="size-4" />
                 Pedir orçamento
@@ -49,7 +52,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="hero-enter hero-enter-delay-4 mt-8 flex flex-wrap gap-2">
+          <div className="hero-enter hero-enter-delay-4 mt-6 flex flex-wrap gap-2 sm:mt-8">
             {badges.map((badge) => (
               <Badge
                 key={badge}
@@ -63,20 +66,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-media-enter relative">
+        <div className="hero-media-enter relative order-2">
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <div
-              className="flex aspect-[4/5] max-h-[520px] flex-col items-center justify-center gap-3 bg-linear-to-br from-secondary to-placeholder-end px-6 text-center text-sm text-muted-foreground"
+              className="flex aspect-[4/5] max-h-[min(52vh,420px)] flex-col items-center justify-center gap-3 bg-linear-to-br from-secondary to-placeholder-end px-6 text-center text-sm text-muted-foreground md:max-h-[520px]"
               role="img"
-              aria-label="Espaço para foto de peça bordada do Ateliê GM. Adicione imagens em .impeccable/assets/proof ou public/images."
+              aria-label="Espaço para foto de peça bordada do Ateliê GM"
             >
-              <ImageIcon className="size-12 text-primary/70" aria-hidden="true" />
-              <span className="max-w-[12rem] leading-relaxed">
-                Em breve: foto real do bordado
-              </span>
+              <ImageIcon className="size-10 text-primary/70 sm:size-12" aria-hidden="true" />
+              <span className="max-w-[12rem] leading-relaxed">Em breve: foto real do bordado</span>
             </div>
           </div>
-          <aside className="absolute -bottom-4 -left-2 max-w-[200px] rounded-xl border border-border bg-card p-4 shadow-md sm:-left-4">
+          <aside className="absolute -bottom-3 left-3 hidden max-w-[200px] rounded-xl border border-border bg-card p-4 shadow-md sm:left-0 sm:block md:-left-4 md:-bottom-4">
             <p className="font-display text-lg font-semibold leading-snug">Cada ponto, uma história</p>
             <span className="text-xs text-muted-foreground">Bordado à mão sob encomenda</span>
           </aside>

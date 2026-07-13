@@ -12,18 +12,21 @@ function homeHash(href: string): string {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary/60 py-12">
-      <Container className="flex flex-col items-center gap-6 text-center">
+    <footer className="border-t border-border bg-secondary/60 py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:py-12">
+      <Container className="flex flex-col items-center gap-5 text-center sm:gap-6">
         <Link to="/" className="font-display text-xl font-bold">
           Ateliê <span className="text-primary">GM</span>
         </Link>
 
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Links do rodapé">
+        <nav
+          className="flex flex-wrap justify-center gap-x-2 gap-y-1 sm:gap-x-4"
+          aria-label="Links do rodapé"
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               to={homeHash(link.href)}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -33,7 +36,7 @@ export default function Footer() {
               href={SOCIAL.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Instagram
             </a>
@@ -42,7 +45,7 @@ export default function Footer() {
 
         <Separator className="max-w-xs" />
 
-        <p className="text-xs text-muted-foreground/80">
+        <p className="text-xs leading-relaxed text-muted-foreground/80">
           © {year} {BRAND.name}. Todos os direitos reservados.
           <br />
           {WHATSAPP_DISPLAY}

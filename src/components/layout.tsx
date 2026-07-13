@@ -13,7 +13,7 @@ export function Section({ id, soft = false, className, children }: SectionProps)
     <section
       id={id}
       className={cn(
-        'py-16 md:py-24',
+        'py-12 sm:py-16 md:py-24',
         soft && 'bg-secondary/60',
         className,
       )}
@@ -31,7 +31,12 @@ export function Container({
   children: ReactNode
 }) {
   return (
-    <div className={cn('mx-auto w-full max-w-6xl px-4 sm:px-6', className)}>
+    <div
+      className={cn(
+        'mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8',
+        className,
+      )}
+    >
       {children}
     </div>
   )
