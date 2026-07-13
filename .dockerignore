@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+.git
+.cursor
+.impeccable
+.vscode
+*.log
+*.local
+.DS_Store
+README.md
+PRODUCT.md
+DESIGN.md
+vercel.json
