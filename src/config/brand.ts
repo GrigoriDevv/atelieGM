@@ -118,15 +118,15 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: '2',
-    alt: 'Almofada bordada Maria Fernanda com flores, gaiola e borboletas',
+    alt: 'Almofada decorativa bordada Maria Fernanda com flores e gaiola',
     category: 'criancas',
-    image: '/images/almofada-maria-fernanda.png',
+    image: '/images/almofada-decorativa.png',
   },
   {
     id: '3',
-    alt: 'Manta personalizada Liz com monograma e babado rosa',
+    alt: 'Manta em tecido piquê 100% algodão personalizada Liz',
     category: 'criancas',
-    image: '/images/manta-liz.png',
+    image: '/images/manta-pique-algodao.png',
   },
   {
     id: '4',
@@ -142,9 +142,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: '6',
-    alt: 'Detalhe de almofada infantil bordada à mão',
+    alt: 'Jogo de lençol com virol e fronha bordados Maria Fernanda',
     category: 'cama',
-    image: '/images/almofada-maria-fernanda.png',
+    image: '/images/jogo-lencol-virol-fronha.png',
   },
 ]
 

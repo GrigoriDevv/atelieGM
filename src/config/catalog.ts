@@ -63,18 +63,18 @@ export const CATALOG_ITEMS: CatalogItem[] = [
   },
   {
     id: 'criancas-manta',
-    name: 'Manta de bebê com nome',
-    description: 'Manta soft com bordado do nome ou monograma do bebê.',
+    name: 'Manta em tecido piquê 100% algodão',
+    description: 'Manta em piquê 100% algodão com bordado do nome ou monograma do bebê.',
     longDescription:
-      'Manta macia e aconchegante, bordada com o nome ou monograma do bebê. Uma peça especial para o berço, o passeio ou o presente de maternidade.',
+      'Manta em tecido piquê 100% algodão, macia e aconchegante, bordada com o nome ou monograma do bebê. Ideal para o berço, o passeio ou o presente de maternidade.',
     features: [
-      'Toque macio e confortável',
+      'Tecido piquê 100% algodão',
       'Bordado com nome ou monograma',
       'Perfeita para presentear',
     ],
     category: 'criancas',
     hint: 'Personalizável',
-    image: '/images/manta-liz.png',
+    image: '/images/manta-pique-algodao.png',
   },
   {
     id: 'criancas-body',
@@ -119,18 +119,34 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/kit-ursinho-joao-lucas.png',
   },
   {
-    id: 'cama-jogo-lencol',
-    name: 'Jogo de lençol e fronhas',
-    description: 'Lençol com fronhas bordadas — monograma, nome ou desenho à escolha.',
+    id: 'criancas-almofada',
+    name: 'Almofada decorativa',
+    description: 'Almofada decorativa com bordado personalizado e acabamento em babado.',
     longDescription:
-      'Jogo de cama com bordado artesanal nas fronhas e acabamento cuidadoso. Personalize com monograma, nome ou desenho.',
+      'Almofada decorativa bordada à mão, com nome e desenhos delicados. Perfeita para complementar o quarto do bebê ou presentear com um toque artesanal.',
     features: [
-      'Lençol e fronhas coordenados',
-      'Bordado personalizado',
+      'Bordado personalizado com nome ou desenho',
+      'Acabamento decorativo em babado',
+      'Ideal para quarto infantil e presentes',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+    image: '/images/almofada-decorativa.png',
+  },
+  {
+    id: 'cama-jogo-lencol',
+    name: 'Jogo de lençol c/ virol e fronha',
+    description: 'Lençol com virol e fronha bordados — monograma, nome ou desenho à escolha.',
+    longDescription:
+      'Jogo com lençol de virol e fronha, bordados à mão com monograma, nome ou desenho. Acabamento delicado, ideal para berço ou cama com personalização sob medida.',
+    features: [
+      'Lençol com virol e fronha coordenados',
+      'Bordado personalizado com nome ou monograma',
       'Linhas Dia a dia e Super Luxo',
     ],
     category: 'cama',
     hint: 'Personalizável',
+    image: '/images/jogo-lencol-virol-fronha.png',
   },
   {
     id: 'cama-colcha',
