@@ -41,6 +41,8 @@ export interface CatalogItem {
   features: string[]
   category: CategoryId
   hint?: string
+  /** Public path under /images */
+  image?: string
 }
 
 export const CATALOG_ITEMS: CatalogItem[] = [
@@ -57,6 +59,7 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     ],
     category: 'criancas',
     hint: 'Personalizável',
+    image: '/images/kit-safari-paulo-francisco.png',
   },
   {
     id: 'criancas-manta',
@@ -71,6 +74,7 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     ],
     category: 'criancas',
     hint: 'Personalizável',
+    image: '/images/manta-liz.png',
   },
   {
     id: 'criancas-body',
@@ -98,6 +102,7 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     ],
     category: 'criancas',
     hint: 'Sob encomenda',
+    image: '/images/kit-berco-maria-fernanda.png',
   },
   {
     id: 'criancas-babador',
@@ -111,6 +116,7 @@ export const CATALOG_ITEMS: CatalogItem[] = [
       'Uso prático no dia a dia',
     ],
     category: 'criancas',
+    image: '/images/kit-ursinho-joao-lucas.png',
   },
   {
     id: 'cama-jogo-lencol',

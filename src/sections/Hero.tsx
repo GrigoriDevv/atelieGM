@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ImageIcon } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import { BRAND } from '@/config/brand'
 import { WHATSAPP_URL } from '@/config/contact'
 import { Button } from '@/components/ui/button'
@@ -7,6 +7,7 @@ import { Container } from '@/components/layout'
 import { IconWhatsApp } from '@/components/WhatsAppIcon'
 
 const badges = ['100% artesanal', 'Peças personalizadas', 'Enxoval completo']
+const heroImage = '/images/kit-berco-maria-fernanda.png'
 
 export default function Hero() {
   const words = BRAND.tagline.split(' ')
@@ -68,14 +69,14 @@ export default function Hero() {
 
         <div className="hero-media-enter relative order-2">
           <div className="overflow-hidden rounded-2xl shadow-lg">
-            <div
-              className="flex aspect-[4/5] max-h-[min(52vh,420px)] flex-col items-center justify-center gap-3 bg-linear-to-br from-secondary to-placeholder-end px-6 text-center text-sm text-muted-foreground md:max-h-[520px]"
-              role="img"
-              aria-label="Espaço para foto de peça bordada do Ateliê GM"
-            >
-              <ImageIcon className="size-10 text-primary/70 sm:size-12" aria-hidden="true" />
-              <span className="max-w-[12rem] leading-relaxed">Em breve: foto real do bordado</span>
-            </div>
+            <img
+              src={heroImage}
+              alt="Kit berço personalizado do Ateliê GM com bordado à mão"
+              className="aspect-[4/5] max-h-[min(52vh,420px)] w-full object-cover md:max-h-[520px]"
+              width={800}
+              height={1000}
+              fetchPriority="high"
+            />
           </div>
           <aside className="absolute -bottom-3 left-3 hidden max-w-[200px] rounded-xl border border-border bg-card p-4 shadow-md sm:left-0 sm:block md:-left-4 md:-bottom-4">
             <p className="font-display text-lg font-semibold leading-snug">Cada ponto, uma história</p>

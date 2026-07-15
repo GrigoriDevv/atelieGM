@@ -24,8 +24,19 @@ export function ProductRelated({ categoryLabel, items }: ProductRelatedProps) {
             className="overflow-hidden py-0 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-md"
           >
             <Link to={getProductPath(relatedItem.id)}>
-              <div className="flex aspect-video items-center justify-center bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
-                <ImageIcon className="size-7 opacity-60" aria-hidden="true" />
+              <div className="relative aspect-video overflow-hidden bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
+                {relatedItem.image ? (
+                  <img
+                    src={relatedItem.image}
+                    alt={relatedItem.name}
+                    className="size-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="flex size-full items-center justify-center">
+                    <ImageIcon className="size-7 opacity-60" aria-hidden="true" />
+                  </div>
+                )}
               </div>
               <CardContent className="p-4">
                 <h3 className="font-display text-lg font-semibold">{relatedItem.name}</h3>

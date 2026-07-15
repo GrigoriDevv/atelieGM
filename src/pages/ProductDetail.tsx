@@ -52,6 +52,7 @@ export default function ProductDetail() {
       onSelectTier={setSelectedTier}
       related={related}
       whatsappUrl={whatsappUrl}
+      imageSrc={item.image}
     />
   )
 }

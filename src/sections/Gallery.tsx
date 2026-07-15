@@ -33,22 +33,31 @@ export default function Gallery() {
                 )}
                 style={{ '--i': Math.min(index, 5) } as CSSProperties}
               >
-                <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-secondary to-placeholder-end p-3 text-center sm:p-4">
-                  <ImageIcon
-                    className={cn(
-                      'text-muted-foreground/60',
-                      featured ? 'size-10 sm:size-12' : 'size-6 sm:size-8',
-                    )}
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="size-full object-cover"
+                    loading="lazy"
                   />
-                  <span
-                    className={cn(
-                      'text-muted-foreground',
-                      featured ? 'max-w-[14rem] text-xs sm:text-sm' : 'text-[0.65rem] sm:text-xs',
-                    )}
-                  >
-                    {item.alt}
-                  </span>
-                </div>
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-secondary to-placeholder-end p-3 text-center sm:p-4">
+                    <ImageIcon
+                      className={cn(
+                        'text-muted-foreground/60',
+                        featured ? 'size-10 sm:size-12' : 'size-6 sm:size-8',
+                      )}
+                    />
+                    <span
+                      className={cn(
+                        'text-muted-foreground',
+                        featured ? 'max-w-[14rem] text-xs sm:text-sm' : 'text-[0.65rem] sm:text-xs',
+                      )}
+                    >
+                      {item.alt}
+                    </span>
+                  </div>
+                )}
                 <Badge className="absolute bottom-2 left-2 rounded-full bg-card/95 text-[0.65rem] font-medium tracking-wide text-foreground hover:bg-card/95 sm:bottom-3 sm:left-3 sm:text-xs">
                   {categoryLabels[item.category]}
                 </Badge>

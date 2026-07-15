@@ -69,8 +69,19 @@ export default function Catalog() {
               style={{ '--i': Math.min(index, 8) } as CSSProperties}
             >
               <Link to={getProductPath(item.id)} className="flex h-full flex-col">
-                <div className="flex aspect-[4/3] items-center justify-center bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
-                  <ImageIcon className="size-8 opacity-60" />
+                <div className="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="size-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex size-full items-center justify-center">
+                      <ImageIcon className="size-8 opacity-60" />
+                    </div>
+                  )}
                 </div>
                 <CardContent className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
                   <div className="flex flex-wrap items-center gap-2">

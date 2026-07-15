@@ -106,15 +106,46 @@ export interface GalleryItem {
   id: string
   alt: string
   category: CategoryId
+  image?: string
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: '1', alt: 'Bordado infantil delicado', category: 'criancas' },
-  { id: '2', alt: 'Enxoval de cama bordado', category: 'cama' },
-  { id: '3', alt: 'Toalha de mesa artesanal', category: 'mesa' },
-  { id: '4', alt: 'Toalha de banho personalizada', category: 'banho' },
-  { id: '5', alt: 'Manta infantil com monograma', category: 'criancas' },
-  { id: '6', alt: 'Fronhas bordadas à mão', category: 'cama' },
+  {
+    id: '1',
+    alt: 'Kit berço personalizado Maria Fernanda com bordado de borboletas',
+    category: 'criancas',
+    image: '/images/kit-berco-maria-fernanda.png',
+  },
+  {
+    id: '2',
+    alt: 'Almofada bordada Maria Fernanda com flores, gaiola e borboletas',
+    category: 'criancas',
+    image: '/images/almofada-maria-fernanda.png',
+  },
+  {
+    id: '3',
+    alt: 'Manta personalizada Liz com monograma e babado rosa',
+    category: 'criancas',
+    image: '/images/manta-liz.png',
+  },
+  {
+    id: '4',
+    alt: 'Enxoval safari Paulo Francisco com bordados de animais',
+    category: 'criancas',
+    image: '/images/kit-safari-paulo-francisco.png',
+  },
+  {
+    id: '5',
+    alt: 'Kit enxoval ursinho João Lucas com toalhas e babados azuis',
+    category: 'criancas',
+    image: '/images/kit-ursinho-joao-lucas.png',
+  },
+  {
+    id: '6',
+    alt: 'Detalhe de almofada infantil bordada à mão',
+    category: 'cama',
+    image: '/images/almofada-maria-fernanda.png',
+  },
 ]
 
 export interface NavLink {
