@@ -28,12 +28,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Nunito", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 1.15rem;
   --header-offset: calc(4.25rem + env(safe-area-inset-top, 0px));
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
@@ -42,32 +42,33 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-instant: 120ms;
-  --duration-state: 240ms;
-  --duration-layout: 420ms;
-  --duration-entrance: 680ms;
-  /* Ateliê GM — linen / embroidery palette */
-  --background: #faf8f5;
-  --foreground: #3d3630;
+  --duration-state: 280ms;
+  --duration-layout: 480ms;
+  --duration-entrance: 720ms;
+  --duration-carousel: 780ms;
+  /* Ateliê GM — soft blush / embroidery palette */
+  --background: #fff8f5;
+  --foreground: #3f342f;
   --card: #ffffff;
-  --card-foreground: #3d3630;
+  --card-foreground: #3f342f;
   --popover: #ffffff;
-  --popover-foreground: #3d3630;
-  --primary: #c4a882;
-  --primary-foreground: #3d3630;
-  --secondary: #f3ede6;
-  --secondary-foreground: #3d3630;
-  --muted: #f3ede6;
-  --muted-foreground: #5c554d;
-  --accent: #8faf9a;
-  --accent-foreground: #3d3630;
+  --popover-foreground: #3f342f;
+  --primary: #d4a28a;
+  --primary-foreground: #3f342f;
+  --secondary: #f7ece6;
+  --secondary-foreground: #3f342f;
+  --muted: #f7ece6;
+  --muted-foreground: #6a5b53;
+  --accent: #8fb59a;
+  --accent-foreground: #3f342f;
   --destructive: #c45c5c;
-  --border: rgba(61, 54, 48, 0.1);
-  --input: rgba(61, 54, 48, 0.14);
-  --ring: #c4a882;
+  --border: rgba(63, 52, 47, 0.1);
+  --input: rgba(63, 52, 47, 0.14);
+  --ring: #d4a28a;
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
-  --placeholder-end: #ebe3d8;
-  --tier-bebe: #d4a5a5;
+  --placeholder-end: #f0e4db;
+  --tier-bebe: #e2b0b0;
 }
 
 @media (min-width: 768px) {
@@ -107,6 +108,17 @@
   h3,
   .font-display {
     font-family: var(--font-serif);
+    font-optical-sizing: auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   img,
@@ -239,6 +251,27 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
   transition: transform var(--duration-instant) var(--ease-out-quart);
 }
 
+/* Soft crossfade carousel */
+.carousel-slide {
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity var(--duration-carousel) var(--ease-out-quart),
+    transform var(--duration-carousel) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.carousel-slide.is-idle {
+  z-index: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -257,6 +290,11 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
     transform: none;
     transition: none;
     filter: none;
+  }
+
+  .carousel-slide {
+    transition: opacity 160ms linear;
+    transform: none;
   }
 
   [data-slot="button"]:active:not(:disabled) {

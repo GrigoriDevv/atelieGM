@@ -1,6 +1,5 @@
 import { useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { ImageIcon } from 'lucide-react'
 import { CATEGORIES, type CategoryId } from '@/config/brand'
 import {
   CATALOG_ITEMS,
@@ -10,6 +9,7 @@ import {
 } from '@/config/catalog'
 import SectionHead from '@/components/SectionHead'
 import { Container, Section } from '@/components/layout'
+import { ProductCarousel } from '@/components/product/ProductCarousel'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -28,7 +28,7 @@ function filterItems(filter: CatalogFilter): CatalogItem[] {
 }
 
 const tabClass =
-  'shrink-0 snap-start rounded-full border border-border bg-card px-4 py-2.5 min-h-11 data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground'
+  'shrink-0 snap-start rounded-full border border-border/80 bg-card/90 px-4 py-2.5 min-h-11 text-[0.9375rem] font-semibold data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm'
 
 export default function Catalog() {
   const [activeFilter, setActiveFilter] = useState<CatalogFilter>('todos')
@@ -39,7 +39,7 @@ export default function Catalog() {
       <Container>
         <SectionHead
           title="Escolha a peça ideal"
-          subtitle="Abra o produto para ver detalhes, escolher a linha de qualidade e pedir orçamento pelo WhatsApp."
+          subtitle="Deslize pelas fotos, abra o produto e peça o orçamento pelo WhatsApp quando estiver pronta."
         />
 
         <Tabs
@@ -65,42 +65,42 @@ export default function Catalog() {
           </div>
         </Tabs>
 
-        <div className="stagger grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        <div className="stagger grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {items.map((item, index) => (
             <Card
               key={item.id}
-              className="reveal overflow-hidden py-0 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99]"
+              className="reveal group overflow-hidden rounded-[1.75rem] border-border/70 py-0 shadow-[0_12px_32px_-24px_rgba(61,54,48,0.35)] transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:shadow-[0_22px_44px_-28px_rgba(61,54,48,0.4)] active:scale-[0.99]"
               style={{ '--i': Math.min(index, 8) } as CSSProperties}
             >
               <Link to={getProductPath(item.id)} className="flex h-full flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground">
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="size-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex size-full items-center justify-center">
-                      <ImageIcon className="size-8 opacity-60" />
-                    </div>
-                  )}
-                </div>
+                <ProductCarousel
+                  productName={item.name}
+                  imageSrc={item.image}
+                  images={item.images}
+                  aspect="card"
+                  autoPlay
+                  showArrows={false}
+                />
                 <CardContent className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge className="rounded-full bg-accent/15 text-accent hover:bg-accent/15">
                       {categoryLabels[item.category]}
                     </Badge>
                     {item.hint && (
-                      <span className="text-xs font-medium text-primary">{item.hint}</span>
+                      <span className="text-xs font-semibold tracking-wide text-primary">
+                        {item.hint}
+                      </span>
                     )}
                   </div>
-                  <h3 className="font-display text-xl font-semibold leading-snug">{item.name}</h3>
-                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-balance">
+                    {item.name}
+                  </h3>
+                  <p className="flex-1 text-sm leading-relaxed text-pretty text-muted-foreground">
                     {item.description}
                   </p>
-                  <span className="text-sm font-semibold text-primary">Ver detalhes →</span>
+                  <span className="text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-0.5">
+                    Ver detalhes →
+                  </span>
                 </CardContent>
               </Link>
             </Card>
