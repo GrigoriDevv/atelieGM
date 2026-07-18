@@ -79,19 +79,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/manta-pique-algodao.png',
   },
   {
-    id: 'criancas-body',
-    name: 'Body personalizado',
-    description: 'Body com bordado exclusivo — ideal para maternidade e presentes.',
-    longDescription:
-      'Body com bordado exclusivo, feito para marcar momentos especiais. Personalize com nome, data ou um desenho delicado.',
-    features: [
-      'Bordado exclusivo sob encomenda',
-      'Ideal para maternidade e batizado',
-      'Acabamento cuidadoso na pele do bebê',
-    ],
-    category: 'criancas',
-  },
-  {
     id: 'criancas-kit-berco',
     name: 'Kit berço completo',
     description: 'Conjunto coordenado: lençol, fronha, manta e babador bordados.',
@@ -219,99 +206,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/jogo-lencol-virol-fronha.png',
   },
   {
-    id: 'cama-colcha',
-    name: 'Colcha com monograma',
-    description: 'Colcha leve com bordado central em monograma ou inicial.',
-    longDescription:
-      'Colcha leve com bordado central em monograma ou inicial, trazendo sofisticação e identidade ao quarto.',
-    features: [
-      'Bordado central em destaque',
-      'Acabamento artesanal',
-      'Personalização de monograma',
-    ],
-    category: 'cama',
-  },
-  {
-    id: 'cama-fronha',
-    name: 'Fronha avulsa bordada',
-    description: 'Fronha individual com bordado delicado — perfeita para presentear.',
-    longDescription:
-      'Fronha avulsa com bordado delicado. Peça versátil para complementar o jogo de cama ou presentear com elegância.',
-    features: [
-      'Peça avulsa',
-      'Bordado delicado',
-      'Ótima opção de presente',
-    ],
-    category: 'cama',
-  },
-  {
-    id: 'cama-edredom',
-    name: 'Edredom personalizado',
-    description: 'Edredom com bordado exclusivo para quarto de casal ou solteiro.',
-    longDescription:
-      'Edredom personalizado sob encomenda, com bordado exclusivo e acabamento sob medida para casal ou solteiro.',
-    features: [
-      'Sob encomenda',
-      'Tamanhos casal ou solteiro',
-      'Bordado exclusivo',
-    ],
-    category: 'cama',
-    hint: 'Sob encomenda',
-  },
-  {
-    id: 'mesa-toalha',
-    name: 'Toalha de mesa bordada',
-    description: 'Toalha de mesa com bordado nas pontas ou centro — vários tamanhos.',
-    longDescription:
-      'Toalha de mesa bordada para ocasiões especiais ou uso diário, com opções de bordado nas pontas ou no centro.',
-    features: [
-      'Vários tamanhos',
-      'Bordado nas pontas ou centro',
-      'Acabamento artesanal',
-    ],
-    category: 'mesa',
-  },
-  {
-    id: 'mesa-jogo-americano',
-    name: 'Jogo americano (6 peças)',
-    description: 'Conjunto de 6 jogos americanos com bordado coordenado.',
-    longDescription:
-      'Conjunto de 6 jogos americanos com bordado coordenado, ideal para mesa posta com estilo e harmonia.',
-    features: [
-      'Kit com 6 peças',
-      'Bordado coordenado',
-      'Ideal para mesa posta',
-    ],
-    category: 'mesa',
-    hint: 'Conjunto',
-  },
-  {
-    id: 'mesa-guardanapo',
-    name: 'Guardanapos bordados',
-    description: 'Guardanapos de tecido com bordado artesanal — kit ou avulso.',
-    longDescription:
-      'Guardanapos de tecido com bordado artesanal. Disponíveis em kit ou avulso, para complementar a mesa.',
-    features: [
-      'Kit ou avulso',
-      'Bordado artesanal',
-      'Combina com toalhas e jogos americanos',
-    ],
-    category: 'mesa',
-  },
-  {
-    id: 'mesa-centro',
-    name: 'Centro de mesa',
-    description: 'Peça decorativa bordada para valorizar sua mesa posta.',
-    longDescription:
-      'Centro de mesa bordado para valorizar a composição da mesa posta com um detalhe artesanal exclusivo.',
-    features: [
-      'Peça decorativa',
-      'Bordado exclusivo',
-      'Acabamento artesanal',
-    ],
-    category: 'mesa',
-  },
-  {
     id: 'banho-toalha',
     name: 'Toalha de banho personalizada',
     description: 'Toalha de banho com nome ou monograma bordado e acabamento em renda.',
@@ -346,20 +240,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/toalha-batismo-luiza.png',
   },
   {
-    id: 'banho-roupao',
-    name: 'Roupão infantil bordado',
-    description: 'Roupão macio para crianças com bordado personalizado.',
-    longDescription:
-      'Roupão infantil macio com bordado personalizado. Conforto após o banho com um toque especial de carinho.',
-    features: [
-      'Bordado personalizado',
-      'Toque macio',
-      'Ideal para crianças',
-    ],
-    category: 'banho',
-    hint: 'Personalizável',
-  },
-  {
     id: 'banho-kit',
     name: 'Kit toalhas de banho e rosto',
     description: 'Toalhas de banho e rosto com bordados coordenados e acabamento em renda.',
@@ -373,19 +253,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     category: 'banho',
     hint: 'Conjunto',
     image: '/images/kit-toalhas-banho-rosto.png',
-  },
-  {
-    id: 'banho-tapete',
-    name: 'Tapete bordado',
-    description: 'Tapete para banheiro com bordado exclusivo e acabamento reforçado.',
-    longDescription:
-      'Tapete de banheiro com bordado exclusivo e acabamento reforçado, para complementar o ambiente com identidade.',
-    features: [
-      'Bordado exclusivo',
-      'Acabamento reforçado',
-      'Complemento para o kit banho',
-    ],
-    category: 'banho',
   },
 ]
 

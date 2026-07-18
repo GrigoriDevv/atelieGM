@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import { ArrowRight, Baby, Bath, BedDouble, Table } from 'lucide-react'
 import { CATEGORIES, type CategoryId } from '@/config/brand'
+import { CATALOG_ITEMS } from '@/config/catalog'
 import SectionHead from '@/components/SectionHead'
 import { Container, Section } from '@/components/layout'
 
@@ -12,6 +13,10 @@ const categoryIcons: Record<CategoryId, LucideIcon> = {
   mesa: Table,
   banho: Bath,
 }
+
+const availableCategories = CATEGORIES.filter((category) =>
+  CATALOG_ITEMS.some((item) => item.category === category.id),
+)
 
 export default function Categories() {
   return (
@@ -23,7 +28,7 @@ export default function Categories() {
         />
 
         <div className="stagger grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8">
-          {CATEGORIES.map((category, index) => {
+          {availableCategories.map((category, index) => {
             const Icon = categoryIcons[category.id]
 
             return (

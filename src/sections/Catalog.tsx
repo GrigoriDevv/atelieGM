@@ -18,6 +18,10 @@ const categoryLabels = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c.title]),
 ) as Record<CategoryId, string>
 
+const availableCategories = CATEGORIES.filter((category) =>
+  CATALOG_ITEMS.some((item) => item.category === category.id),
+)
+
 function filterItems(filter: CatalogFilter): CatalogItem[] {
   if (filter === 'todos') return CATALOG_ITEMS
   return CATALOG_ITEMS.filter((item) => item.category === filter)
@@ -48,7 +52,7 @@ export default function Catalog() {
               <TabsTrigger value="todos" className={`${tabClass} snap-start`}>
                 Todos
               </TabsTrigger>
-              {CATEGORIES.map((category) => (
+              {availableCategories.map((category) => (
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
