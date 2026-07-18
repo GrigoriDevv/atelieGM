@@ -136,9 +136,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: '5',
-    alt: 'Kit enxoval ursinho João Lucas com toalhas e babados azuis',
-    category: 'criancas',
-    image: '/images/kit-ursinho-joao-lucas.png',
+    alt: 'Kit de toalhas de banho e rosto Sirlene com bordado floral e renda',
+    category: 'banho',
+    image: '/images/kit-toalhas-banho-rosto.png',
   },
   {
     id: '6',

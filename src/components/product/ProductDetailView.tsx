@@ -37,7 +37,7 @@ export function ProductDetailView({
 
         <div className="grid items-start gap-6 md:grid-cols-2 md:gap-12 lg:gap-16">
           <div className="order-1 md:sticky md:top-[calc(var(--header-offset)+1rem)] md:order-none">
-            <ProductMedia productName={item.name} imageSrc={imageSrc} />
+            <ProductMedia productName={item.name} imageSrc={imageSrc} images={item.images} />
           </div>
 
           <div className="order-2 min-w-0 md:order-none">

@@ -43,6 +43,8 @@ export interface CatalogItem {
   hint?: string
   /** Public path under /images */
   image?: string
+  /** Fotos extras — quando presente, a página do produto exibe um carrossel */
+  images?: string[]
 }
 
 export const CATALOG_ITEMS: CatalogItem[] = [
@@ -103,6 +105,13 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     category: 'criancas',
     hint: 'Sob encomenda',
     image: '/images/kit-berco-maria-fernanda.png',
+    images: [
+      '/images/kit-berco-maria-fernanda.png',
+      '/images/kit-berco-maria-helena-1.png',
+      '/images/kit-berco-maria-helena-2.png',
+      '/images/kit-berco-maria-helena-3.png',
+      '/images/kit-berco-mavie.png',
+    ],
   },
   {
     id: 'criancas-babador',
@@ -119,6 +128,60 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/kit-ursinho-joao-lucas.png',
   },
   {
+    id: 'criancas-kit-fraldas-ombro',
+    name: 'Kit Fraldas Ombro Luxo',
+    description: 'Kit de fraldas de ombro com bordado floral, nome do bebê e acabamento em renda.',
+    longDescription:
+      'Kit de fraldas de ombro na linha luxo, bordadas à mão com jardim de flores, borboletas e o nome do bebê. Acabamento delicado em renda e barrados coordenados — práticas no dia a dia e lindas para presentear.',
+    features: [
+      'Bordado floral com o nome do bebê',
+      'Acabamento em renda e barrados coordenados',
+      'Kit com múltiplas fraldas de ombro',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+    image: '/images/kit-fraldas-ombro-1.png',
+    images: [
+      '/images/kit-fraldas-ombro-1.png',
+      '/images/kit-fraldas-ombro-2.png',
+      '/images/kit-fraldas-ombro-3.png',
+    ],
+  },
+  {
+    id: 'criancas-kit-fraldas-boca',
+    name: 'Kit fraldas de boca',
+    description: 'Kit de fraldas de boca personalizadas com nome e bordados infantis.',
+    longDescription:
+      'Kit de fraldas de boca bordadas à mão com o nome do bebê e desenhos infantis coordenados. Peças práticas para o dia a dia, com acabamento delicado em renda e babado.',
+    features: [
+      'Bordado personalizado com o nome do bebê',
+      'Desenhos infantis coordenados',
+      'Acabamento em renda e babado',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+    image: '/images/kit-fraldas-boca-safari.png',
+  },
+  {
+    id: 'criancas-kit-leito-maternidade',
+    name: 'Kit leito maternidade',
+    description: 'Conjunto bordado para o leito da maternidade: lençol, fronha e almofada personalizados.',
+    longDescription:
+      'Kit para o leito da maternidade com lençol, fronha e almofada bordados à mão com o nome do bebê. Peças coordenadas com acabamento em renda, para receber o recém-nascido com todo o carinho já nos primeiros dias.',
+    features: [
+      'Lençol, fronha e almofada coordenados',
+      'Bordado personalizado com o nome do bebê',
+      'Acabamento delicado em renda',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+    image: '/images/kit-leito-maternidade-1.png',
+    images: [
+      '/images/kit-leito-maternidade-1.png',
+      '/images/kit-leito-maternidade-2.png',
+    ],
+  },
+  {
     id: 'criancas-almofada',
     name: 'Almofada decorativa',
     description: 'Almofada decorativa com bordado personalizado e acabamento em babado.',
@@ -132,6 +195,13 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     category: 'criancas',
     hint: 'Personalizável',
     image: '/images/almofada-decorativa.png',
+    images: [
+      '/images/almofada-decorativa.png',
+      '/images/almofada-maria-fernanda.png',
+      '/images/almofada-ave-maria.png',
+      '/images/almofada-monograma-tc.png',
+      '/images/almofada-monograma-gr.png',
+    ],
   },
   {
     id: 'cama-jogo-lencol',
@@ -243,17 +313,37 @@ export const CATALOG_ITEMS: CatalogItem[] = [
   },
   {
     id: 'banho-toalha',
-    name: 'Toalha de banho com monograma',
-    description: 'Toalha felpuda com monograma ou nome bordado à mão.',
+    name: 'Toalha de banho personalizada',
+    description: 'Toalha de banho com nome ou monograma bordado e acabamento em renda.',
     longDescription:
-      'Toalha de banho felpuda com monograma ou nome bordado à mão — prática, elegante e personalizada.',
+      'Toalha de banho macia com nome ou monograma bordado à mão e acabamento delicado em renda. Uma peça prática, elegante e personalizada para o dia a dia ou para presentear.',
     features: [
-      'Monograma ou nome',
+      'Nome ou monograma personalizado',
       'Toque macio',
-      'Personalização artesanal',
+      'Acabamento delicado em renda',
     ],
     category: 'banho',
     hint: 'Personalizável',
+    image: '/images/toalha-banho-layane.png',
+    images: [
+      '/images/toalha-banho-layane.png',
+      '/images/toalha-banho-filipe.png',
+    ],
+  },
+  {
+    id: 'banho-toalha-batismo',
+    name: 'Toalha para batismo',
+    description: 'Toalha personalizada para batismo com nome, data e bordado religioso.',
+    longDescription:
+      'Toalha para batismo bordada à mão com o nome, a data da celebração e símbolos religiosos. O acabamento em renda, flores e laços transforma a peça em uma recordação especial desse momento de fé.',
+    features: [
+      'Nome e data do batismo personalizados',
+      'Bordado religioso com flores e símbolos',
+      'Acabamento delicado em renda e laço',
+    ],
+    category: 'banho',
+    hint: 'Personalizável',
+    image: '/images/toalha-batismo-luiza.png',
   },
   {
     id: 'banho-roupao',
@@ -271,17 +361,18 @@ export const CATALOG_ITEMS: CatalogItem[] = [
   },
   {
     id: 'banho-kit',
-    name: 'Kit banho completo',
-    description: 'Toalha de banho, rosto e tapete com bordados coordenados.',
+    name: 'Kit toalhas de banho e rosto',
+    description: 'Toalhas de banho e rosto com bordados coordenados e acabamento em renda.',
     longDescription:
-      'Kit completo de banho com toalha de banho, rosto e tapete, todos com bordados coordenados no mesmo tema.',
+      'Kit de toalhas de banho e rosto bordadas à mão, com nome ou monograma e acabamento delicado em renda. Bordados coordenados no mesmo tema para um conjunto elegante.',
     features: [
-      'Conjunto coordenado',
-      'Toalha, rosto e tapete',
-      'Bordados sob medida',
+      'Toalhas de banho e rosto coordenadas',
+      'Bordado personalizado com nome ou monograma',
+      'Acabamento em renda',
     ],
     category: 'banho',
     hint: 'Conjunto',
+    image: '/images/kit-toalhas-banho-rosto.png',
   },
   {
     id: 'banho-tapete',
