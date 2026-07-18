@@ -1,4 +1,5 @@
 import Hero from '../sections/Hero'
+import Benefits from '../sections/Benefits'
 import Categories from '../sections/Categories'
 import Catalog from '../sections/Catalog'
 import Gallery from '../sections/Gallery'
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Benefits />
       <Categories />
       <Catalog />
       <Gallery />

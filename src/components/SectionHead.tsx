@@ -24,7 +24,7 @@ export default function SectionHead({
       )}
     >
       {eyebrow && (
-        <span className="reveal mb-3 inline-block text-sm font-medium text-accent">
+        <span className="reveal mb-3 inline-block text-[0.6875rem] font-bold tracking-[0.3em] text-primary uppercase">
           {eyebrow}
         </span>
       )}

@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               to={homeHash(link.href)}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-[0.6875rem] font-bold tracking-[0.2em] text-muted-foreground uppercase transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
