@@ -146,6 +146,48 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'cama',
     image: '/images/jogo-lencol-virol-fronha.png',
   },
+  {
+    id: '7',
+    alt: 'Kit leito maternidade Maria Antônia com almofada e renda',
+    category: 'criancas',
+    image: '/images/kit-leito-maternidade-1.png',
+  },
+  {
+    id: '8',
+    alt: 'Kit fraldas de ombro luxo Ana Júlia e Ana Clara com bordado floral',
+    category: 'criancas',
+    image: '/images/kit-fraldas-ombro-1.png',
+  },
+  {
+    id: '9',
+    alt: 'Kit fraldas de boca safari Abner com leão, elefante e girafa',
+    category: 'criancas',
+    image: '/images/kit-fraldas-boca-safari.png',
+  },
+  {
+    id: '10',
+    alt: 'Toalha para batismo Luiza com bordado religioso e renda',
+    category: 'banho',
+    image: '/images/toalha-batismo-luiza.png',
+  },
+  {
+    id: '11',
+    alt: 'Toalha de banho personalizada Layane Catielle com flores e borboletas',
+    category: 'banho',
+    image: '/images/toalha-banho-layane.png',
+  },
+  {
+    id: '12',
+    alt: 'Kit berço Mavie com almofadas e rolinhos em rosa',
+    category: 'criancas',
+    image: '/images/kit-berco-mavie.png',
+  },
+  {
+    id: '13',
+    alt: 'Kit berço Maria Helena com rolinhos e almofada drapeada',
+    category: 'criancas',
+    image: '/images/kit-berco-maria-helena-1.png',
+  },
 ]
 
 export interface NavLink {
