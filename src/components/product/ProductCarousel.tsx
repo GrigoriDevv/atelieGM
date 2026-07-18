@@ -15,11 +15,37 @@ export interface ProductCarouselProps {
 }
 
 const aspectClass = {
-  card: 'aspect-[4/3]',
-  related: 'aspect-video',
-  detail:
-    'aspect-[4/5] max-h-[min(70vw,28rem)] sm:aspect-square sm:max-h-none',
+  card: 'aspect-[5/4]',
+  related: 'aspect-[5/4]',
+  detail: 'aspect-[4/5] max-h-[min(72vw,30rem)] sm:aspect-[5/6] sm:max-h-[36rem]',
 } as const
+
+/** Prefer full product in frame for flat-lay / kit shots */
+const FRAME_POSITION: Record<string, string> = {
+  '/images/kit-berco-maria-fernanda.png': 'object-[center_42%]',
+  '/images/kit-berco-maria-helena-1.png': 'object-[center_40%]',
+  '/images/kit-berco-maria-helena-2.png': 'object-[center_45%]',
+  '/images/kit-berco-maria-helena-3.png': 'object-[center_48%]',
+  '/images/kit-berco-mavie.png': 'object-[center_42%]',
+  '/images/kit-safari-paulo-francisco.png': 'object-[center_48%]',
+  '/images/kit-ursinho-joao-lucas.png': 'object-[center_45%]',
+  '/images/jogo-lencol-virol-fronha.png': 'object-[center_50%]',
+  '/images/manta-pique-algodao.png': 'object-[center_48%]',
+  '/images/manta-liz.png': 'object-[center_45%]',
+  '/images/kit-toalhas-banho-rosto.png': 'object-[center_46%]',
+  '/images/toalha-banho-layane.png': 'object-[center_48%]',
+  '/images/toalha-banho-filipe.png': 'object-[center_48%]',
+  '/images/toalha-batismo-luiza.png': 'object-[center_42%]',
+  '/images/kit-fraldas-ombro-1.png': 'object-[center_50%]',
+  '/images/kit-fraldas-ombro-2.png': 'object-[center_50%]',
+  '/images/kit-fraldas-ombro-3.png': 'object-[center_50%]',
+  '/images/kit-fraldas-boca-safari.png': 'object-[center_48%]',
+  '/images/almofada-maria-fernanda.png': 'object-center',
+  '/images/almofada-decorativa.png': 'object-center',
+  '/images/almofada-ave-maria.png': 'object-center',
+  '/images/almofada-monograma-tc.png': 'object-center',
+  '/images/almofada-monograma-gr.png': 'object-center',
+}
 
 const AUTO_MS = 4200
 
@@ -44,6 +70,7 @@ export function ProductCarousel({
   const [paused, setPaused] = useState(false)
   const reduceMotion = usePrefersReducedMotion()
   const touchStartX = useRef<number | null>(null)
+  const fitContain = aspect === 'card' || aspect === 'related'
 
   const goTo = useCallback(
     (index: number) => {
@@ -69,7 +96,7 @@ export function ProductCarousel({
     return (
       <div
         className={cn(
-          'flex flex-col items-center justify-center gap-3 bg-linear-to-br from-secondary to-placeholder-end text-muted-foreground',
+          'flex flex-col items-center justify-center gap-3 bg-linear-to-br from-pastel-blue to-pastel-pink text-muted-foreground',
           aspectClass[aspect],
           className,
         )}
@@ -85,7 +112,10 @@ export function ProductCarousel({
   return (
     <div
       className={cn(
-        'group relative overflow-hidden bg-secondary',
+        'group relative overflow-hidden',
+        fitContain
+          ? 'bg-linear-to-br from-pastel-blue via-card to-pastel-pink'
+          : 'bg-pastel-lavender',
         aspectClass[aspect],
         className,
       )}
@@ -122,7 +152,10 @@ export function ProductCarousel({
               : `Foto de ${productName}`
           }
           className={cn(
-            'absolute inset-0 size-full object-cover',
+            'absolute inset-0 size-full',
+            fitContain
+              ? 'object-contain p-3 sm:p-4'
+              : cn('object-cover', FRAME_POSITION[src] ?? 'object-[center_45%]'),
             'carousel-slide',
             index === active ? 'is-active' : 'is-idle',
           )}
@@ -142,7 +175,7 @@ export function ProductCarousel({
               goPrev()
             }}
             aria-label="Foto anterior"
-            className="absolute top-1/2 left-2 z-10 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full bg-card/85 text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:bg-card hover:scale-105 sm:flex opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+            className="absolute top-1/2 left-2 z-10 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full bg-card/85 text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-card sm:flex opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -154,7 +187,7 @@ export function ProductCarousel({
               goNext()
             }}
             aria-label="Próxima foto"
-            className="absolute top-1/2 right-2 z-10 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full bg-card/85 text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:bg-card hover:scale-105 sm:flex opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+            className="absolute top-1/2 right-2 z-10 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full bg-card/85 text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-card sm:flex opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
           >
             <ChevronRight className="size-5" />
           </button>

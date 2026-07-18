@@ -10,6 +10,14 @@ const categoryLabels = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c.title]),
 ) as Record<string, string>
 
+const galleryFocus: Record<string, string> = {
+  '/images/kit-berco-maria-fernanda.png': 'object-[center_42%]',
+  '/images/kit-berco-maria-helena-1.png': 'object-[center_40%]',
+  '/images/kit-berco-mavie.png': 'object-[center_42%]',
+  '/images/toalha-batismo-luiza.png': 'object-[center_42%]',
+  '/images/jogo-lencol-virol-fronha.png': 'object-[center_48%]',
+}
+
 export default function Gallery() {
   return (
     <Section id="galeria">
@@ -26,7 +34,7 @@ export default function Gallery() {
               <figure
                 key={item.id}
                 className={cn(
-                  'reveal relative overflow-hidden rounded-xl bg-secondary sm:rounded-2xl',
+                  'reveal group relative overflow-hidden rounded-xl bg-pastel-lavender sm:rounded-2xl',
                   featured
                     ? 'col-span-2 row-span-2 aspect-square md:aspect-auto md:min-h-[28rem]'
                     : 'aspect-square',
@@ -37,11 +45,14 @@ export default function Gallery() {
                   <img
                     src={item.image}
                     alt={item.alt}
-                    className="size-full object-cover"
+                    className={cn(
+                      'media-zoom size-full object-cover transition-transform',
+                      galleryFocus[item.image] ?? 'object-[center_45%]',
+                    )}
                     loading="lazy"
                   />
                 ) : (
-                  <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-secondary to-placeholder-end p-3 text-center sm:p-4">
+                  <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-pastel-blue to-pastel-pink p-3 text-center sm:p-4">
                     <ImageIcon
                       className={cn(
                         'text-muted-foreground/60',

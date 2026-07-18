@@ -83,7 +83,7 @@ export default function Catalog() {
                 />
                 <CardContent className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
                   <div className="flex flex-wrap items-center gap-2">
-                    <Badge className="rounded-full bg-accent/15 text-accent hover:bg-accent/15">
+                    <Badge className="rounded-full bg-accent/20 text-accent hover:bg-accent/20">
                       {categoryLabels[item.category]}
                     </Badge>
                     {item.hint && (

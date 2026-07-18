@@ -18,7 +18,7 @@ export default function Hero() {
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] bg-pastel-blue sm:rounded-[2.5rem]">
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(255,255,255,0.55),transparent_46%),radial-gradient(circle_at_10%_90%,rgba(248,226,230,0.6),transparent_44%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(255,255,255,0.65),transparent_48%),radial-gradient(circle_at_12%_88%,rgba(252,233,237,0.75),transparent_46%),radial-gradient(circle_at_60%_60%,rgba(232,244,238,0.45),transparent_40%)]"
             aria-hidden="true"
           />
 
@@ -38,7 +38,7 @@ export default function Hero() {
               </p>
 
               <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
-                <Button asChild variant="default" size="lg" className="w-full touch-target bg-card/60 sm:w-auto">
+                <Button asChild variant="default" size="lg" className="w-full touch-target bg-card/70 sm:w-auto">
                   <a href="#catalogo">
                     Ver catálogo
                     <ArrowRight className="size-4" />
@@ -65,12 +65,12 @@ export default function Hero() {
               </ul>
             </div>
 
-            <div className="hero-media-enter relative order-2">
-              <div className="overflow-hidden rounded-[1.75rem] shadow-[0_28px_56px_-30px_rgba(64,55,47,0.5)]">
+            <div className="hero-media-enter media-float relative order-2">
+              <div className="media-frame overflow-hidden rounded-[1.75rem] bg-pastel-pink/50 shadow-[0_28px_56px_-30px_rgba(58,53,64,0.45)] ring-1 ring-white/60">
                 <img
                   src={heroImage}
                   alt="Kit berço personalizado do Ateliê GM com bordado à mão"
-                  className="aspect-[4/5] max-h-[min(50vh,400px)] w-full object-cover md:max-h-[500px]"
+                  className="media-kenburns aspect-[4/5] max-h-[min(52vh,420px)] w-full object-cover object-[center_42%] md:max-h-[520px]"
                   width={800}
                   height={1000}
                   fetchPriority="high"

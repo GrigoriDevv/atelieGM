@@ -14,7 +14,14 @@ const categoryImages: Partial<Record<CategoryId, string>> = {
   mesa: '/images/kit-safari-paulo-francisco.png',
 }
 
-const tileTints = ['bg-pastel-pink', 'bg-pastel-blue', 'bg-secondary'] as const
+const categoryFocus: Partial<Record<CategoryId, string>> = {
+  criancas: 'object-[center_40%]',
+  cama: 'object-[center_48%]',
+  banho: 'object-[center_46%]',
+  mesa: 'object-[center_48%]',
+}
+
+const tileTints = ['bg-pastel-pink', 'bg-pastel-blue', 'bg-pastel-mint', 'bg-pastel-lavender'] as const
 
 const availableCategories = CATEGORIES.filter((category) =>
   CATALOG_ITEMS.some((item) => item.category === category.id),
@@ -37,16 +44,19 @@ export default function Categories() {
               key={category.id}
               to="/#catalogo"
               className={cn(
-                'reveal group relative flex flex-col overflow-hidden rounded-[1.75rem] transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:shadow-[0_22px_44px_-28px_rgba(64,55,47,0.4)]',
+                'reveal group relative flex flex-col overflow-hidden rounded-[1.75rem] transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:shadow-[0_22px_44px_-28px_rgba(58,53,64,0.35)]',
                 tileTints[index % tileTints.length],
               )}
               style={{ '--i': index } as CSSProperties}
             >
-              <div className="overflow-hidden px-6 pt-6 sm:px-8 sm:pt-8">
+              <div className="media-frame mx-6 mt-6 overflow-hidden rounded-[1.25rem] bg-card/40 sm:mx-8 sm:mt-8">
                 <img
                   src={categoryImages[category.id]}
                   alt={`Peças bordadas da linha ${category.title}`}
-                  className="aspect-[4/3] w-full rounded-[1.25rem] object-cover shadow-[0_16px_32px_-24px_rgba(64,55,47,0.45)] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
+                  className={cn(
+                    'media-zoom aspect-[5/4] w-full object-cover',
+                    categoryFocus[category.id] ?? 'object-center',
+                  )}
                   loading="lazy"
                 />
               </div>

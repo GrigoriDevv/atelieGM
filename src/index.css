@@ -26,6 +26,8 @@
   --color-placeholder-end: var(--placeholder-end);
   --color-pastel-blue: var(--pastel-blue);
   --color-pastel-pink: var(--pastel-pink);
+  --color-pastel-mint: var(--pastel-mint);
+  --color-pastel-lavender: var(--pastel-lavender);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -48,31 +50,33 @@
   --duration-layout: 480ms;
   --duration-entrance: 720ms;
   --duration-carousel: 780ms;
-  /* Ateliê GM — pastel nursery palette (powder blue / blush / gold thread) */
-  --background: #ffffff;
-  --foreground: #40372f;
+  /* Ateliê GM — soft nursery pastels (powder blue / blush / mint / lavender) */
+  --background: #f7f9fc;
+  --foreground: #3a3540;
   --card: #ffffff;
-  --card-foreground: #40372f;
+  --card-foreground: #3a3540;
   --popover: #ffffff;
-  --popover-foreground: #40372f;
-  --primary: #bd9a6f;
-  --primary-foreground: #ffffff;
-  --secondary: #f9eef0;
-  --secondary-foreground: #40372f;
-  --muted: #f9eef0;
-  --muted-foreground: #6b5f55;
-  --accent: #56819c;
-  --accent-foreground: #ffffff;
-  --pastel-blue: #d9eaf3;
-  --pastel-pink: #f8e2e6;
+  --popover-foreground: #3a3540;
+  --primary: #e2b8b4;
+  --primary-foreground: #3a3540;
+  --secondary: #eaf3f8;
+  --secondary-foreground: #3a3540;
+  --muted: #f3eef6;
+  --muted-foreground: #6a6270;
+  --accent: #8aadc0;
+  --accent-foreground: #3a3540;
+  --pastel-blue: #e4f1f7;
+  --pastel-pink: #fce9ed;
+  --pastel-mint: #e8f4ee;
+  --pastel-lavender: #f0eaf6;
   --destructive: #c45c5c;
-  --border: rgba(64, 55, 47, 0.1);
-  --input: rgba(64, 55, 47, 0.14);
-  --ring: #bd9a6f;
+  --border: rgba(58, 53, 64, 0.09);
+  --input: rgba(58, 53, 64, 0.12);
+  --ring: #e2b8b4;
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
-  --placeholder-end: #f1e7e9;
-  --tier-bebe: #e2b0b0;
+  --placeholder-end: #f3eef6;
+  --tier-bebe: #f0c4c8;
 }
 
 @media (min-width: 768px) {
@@ -258,7 +262,7 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
 /* Soft crossfade carousel */
 .carousel-slide {
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.04);
   transition:
     opacity var(--duration-carousel) var(--ease-out-quart),
     transform var(--duration-carousel) var(--ease-out-expo);
@@ -270,10 +274,53 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
   transform: scale(1);
   pointer-events: auto;
   z-index: 1;
+  animation: media-kenburns 9s var(--ease-out-quart) both;
 }
 
 .carousel-slide.is-idle {
   z-index: 0;
+}
+
+/* Image hover / ambient motion */
+.media-frame {
+  overflow: hidden;
+}
+
+.media-zoom {
+  transition: transform 900ms var(--ease-out-expo);
+  will-change: transform;
+}
+
+.group:hover .media-zoom,
+.group:focus-within .media-zoom {
+  transform: scale(1.06);
+}
+
+.media-kenburns {
+  animation: media-kenburns 14s ease-in-out infinite alternate;
+}
+
+@keyframes media-kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(0, -1.5%, 0);
+  }
+}
+
+.media-float {
+  animation: media-float 7s ease-in-out infinite;
+}
+
+@keyframes media-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.4rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -283,7 +330,10 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
 
   .hero-enter,
   .hero-media-enter,
-  .fab-enter {
+  .fab-enter,
+  .media-kenburns,
+  .media-float,
+  .carousel-slide.is-active {
     animation: none;
   }
 
@@ -299,6 +349,13 @@ html[data-motion="ready"] .stagger > .reveal:not(.is-visible) {
   .carousel-slide {
     transition: opacity 160ms linear;
     transform: none;
+  }
+
+  .media-zoom,
+  .group:hover .media-zoom,
+  .group:focus-within .media-zoom {
+    transform: none;
+    transition: none;
   }
 
   [data-slot="button"]:active:not(:disabled) {
