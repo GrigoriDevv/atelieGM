@@ -49,7 +49,7 @@ export default function Categories() {
               )}
               style={{ '--i': index } as CSSProperties}
             >
-              <div className="media-frame mx-6 mt-6 overflow-hidden rounded-[1.25rem] bg-card/40 sm:mx-8 sm:mt-8">
+              <div className="media-frame overflow-hidden">
                 <img
                   src={categoryImages[category.id]}
                   alt={`Peças bordadas da linha ${category.title}`}

@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
 
             <div className="hero-media-enter media-float relative order-2">
-              <div className="media-frame overflow-hidden rounded-[1.75rem] bg-pastel-pink/50 shadow-[0_28px_56px_-30px_rgba(58,53,64,0.45)] ring-1 ring-white/60">
+              <div className="media-frame overflow-hidden rounded-[1.75rem] shadow-[0_28px_56px_-30px_rgba(58,53,64,0.45)]">
                 <img
                   src={heroImage}
                   alt="Kit berço personalizado do Ateliê GM com bordado à mão"

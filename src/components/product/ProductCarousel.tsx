@@ -70,7 +70,6 @@ export function ProductCarousel({
   const [paused, setPaused] = useState(false)
   const reduceMotion = usePrefersReducedMotion()
   const touchStartX = useRef<number | null>(null)
-  const fitContain = aspect === 'card' || aspect === 'related'
 
   const goTo = useCallback(
     (index: number) => {
@@ -112,10 +111,7 @@ export function ProductCarousel({
   return (
     <div
       className={cn(
-        'group relative overflow-hidden',
-        fitContain
-          ? 'bg-linear-to-br from-pastel-blue via-card to-pastel-pink'
-          : 'bg-pastel-lavender',
+        'group relative overflow-hidden bg-pastel-lavender',
         aspectClass[aspect],
         className,
       )}
@@ -152,10 +148,8 @@ export function ProductCarousel({
               : `Foto de ${productName}`
           }
           className={cn(
-            'absolute inset-0 size-full',
-            fitContain
-              ? 'object-contain p-3 sm:p-4'
-              : cn('object-cover', FRAME_POSITION[src] ?? 'object-[center_45%]'),
+            'absolute inset-0 size-full object-cover',
+            FRAME_POSITION[src] ?? 'object-[center_45%]',
             'carousel-slide',
             index === active ? 'is-active' : 'is-idle',
           )}
