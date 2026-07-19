@@ -1,5 +1,4 @@
 import type { CSSProperties } from 'react'
-import { ImageIcon } from 'lucide-react'
 import { CATEGORIES, GALLERY_ITEMS } from '@/config/brand'
 import SectionHead from '@/components/SectionHead'
 import { Container, Section } from '@/components/layout'
@@ -18,6 +17,8 @@ const galleryFocus: Record<string, string> = {
   '/images/jogo-lencol-virol-fronha.png': 'object-[center_48%]',
 }
 
+const galleryItems = GALLERY_ITEMS.filter((item) => Boolean(item.image))
+
 export default function Gallery() {
   return (
     <Section id="galeria">
@@ -28,7 +29,7 @@ export default function Gallery() {
         />
 
         <div className="stagger grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 md:gap-4">
-          {GALLERY_ITEMS.map((item, index) => {
+          {galleryItems.map((item, index) => {
             const featured = index === 0
             return (
               <figure
@@ -41,34 +42,15 @@ export default function Gallery() {
                 )}
                 style={{ '--i': Math.min(index, 5) } as CSSProperties}
               >
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className={cn(
-                      'media-zoom size-full object-cover transition-transform',
-                      galleryFocus[item.image] ?? 'object-[center_45%]',
-                    )}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="flex h-full flex-col items-center justify-center gap-2 bg-linear-to-br from-pastel-blue to-pastel-pink p-3 text-center sm:p-4">
-                    <ImageIcon
-                      className={cn(
-                        'text-muted-foreground/60',
-                        featured ? 'size-10 sm:size-12' : 'size-6 sm:size-8',
-                      )}
-                    />
-                    <span
-                      className={cn(
-                        'text-muted-foreground',
-                        featured ? 'max-w-[14rem] text-xs sm:text-sm' : 'text-[0.65rem] sm:text-xs',
-                      )}
-                    >
-                      {item.alt}
-                    </span>
-                  </div>
-                )}
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className={cn(
+                    'media-zoom size-full object-cover transition-transform',
+                    galleryFocus[item.image!] ?? 'object-[center_45%]',
+                  )}
+                  loading="lazy"
+                />
                 <Badge className="absolute bottom-2 left-2 rounded-full bg-card/95 text-[0.65rem] font-medium tracking-wide text-foreground hover:bg-card/95 sm:bottom-3 sm:left-3 sm:text-xs">
                   {categoryLabels[item.category]}
                 </Badge>

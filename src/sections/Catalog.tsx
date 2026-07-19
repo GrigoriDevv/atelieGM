@@ -23,8 +23,9 @@ const availableCategories = CATEGORIES.filter((category) =>
 )
 
 function filterItems(filter: CatalogFilter): CatalogItem[] {
-  if (filter === 'todos') return CATALOG_ITEMS
-  return CATALOG_ITEMS.filter((item) => item.category === filter)
+  const withPhotos = CATALOG_ITEMS.filter((item) => Boolean(item.image))
+  if (filter === 'todos') return withPhotos
+  return withPhotos.filter((item) => item.category === filter)
 }
 
 const tabClass =

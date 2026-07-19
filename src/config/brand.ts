@@ -27,7 +27,7 @@ export const CATEGORIES: Category[] = [
     id: 'criancas',
     title: 'Para Bebê',
     description:
-      'Fraldas, mantas, cueiros, toalhas fralda, kit berço, kit leito maternidade e outras peças personalizadas.',
+      'Fraldas, cueiros, toalhas fralda, mantas, kit berço, kit leito maternidade e almofadas — sob encomenda.',
     messageKey: 'criancas',
   },
   {
