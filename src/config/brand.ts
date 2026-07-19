@@ -33,7 +33,7 @@ export const CATEGORIES: Category[] = [
   {
     id: 'cama',
     title: 'Cama',
-    description: 'Lençóis, fronhas, colchas e jogos de cama com acabamento artesanal.',
+    description: 'Jogo de lençol, fronhas e almofada decorativa com bordado artesanal.',
     messageKey: 'cama',
   },
   {
@@ -45,7 +45,7 @@ export const CATEGORIES: Category[] = [
   {
     id: 'banho',
     title: 'Banho',
-    description: 'Toalhas, roupões e tapetes com bordados exclusivos e duráveis.',
+    description: 'Toalha de banho, toalha de rosto e toalhinha social personalizadas.',
     messageKey: 'banho',
   },
 ]

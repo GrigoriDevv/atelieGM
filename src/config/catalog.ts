@@ -154,13 +154,13 @@ export const CATALOG_ITEMS: CatalogItem[] = [
   },
   {
     id: 'cama-jogo-lencol',
-    name: 'Jogo de lençol c/ virol e fronha',
-    description: 'Lençol com virol e fronha bordados — monograma, nome ou desenho à escolha.',
+    name: 'Jogo de lençol',
+    description: 'Jogo de lençol bordado — monograma, nome ou desenho à escolha.',
     longDescription:
-      'Jogo com lençol de virol e fronha, bordados à mão com monograma, nome ou desenho. Acabamento delicado, ideal para berço ou cama com personalização sob medida.',
+      'Jogo de lençol bordado à mão com monograma, nome ou desenho. Acabamento delicado, sob encomenda, nas linhas Dia a dia e Super Luxo.',
     features: [
-      'Lençol com virol e fronha coordenados',
       'Bordado personalizado com nome ou monograma',
+      'Acabamento artesanal',
       'Linhas Dia a dia e Super Luxo',
     ],
     category: 'cama',
@@ -168,8 +168,45 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     image: '/images/jogo-lencol-virol-fronha.png',
   },
   {
-    id: 'banho-toalha',
-    name: 'Toalha de banho personalizada',
+    id: 'cama-fronhas',
+    name: 'Fronhas',
+    description: 'Fronhas bordadas, coordenadas com o jogo de lençol ou avulsas.',
+    longDescription:
+      'Fronhas bordadas à mão com monograma, nome ou desenho. Podem acompanhar o jogo de lençol ou ser encomendadas avulsas, com o mesmo cuidado artesanal.',
+    features: [
+      'Bordado personalizado',
+      'Avulsas ou coordenadas com o jogo de lençol',
+      'Acabamento artesanal',
+    ],
+    category: 'cama',
+    hint: 'Personalizável',
+    image: '/images/jogo-lencol-virol-fronha.png',
+  },
+  {
+    id: 'cama-almofada',
+    name: 'Almofada decorativa',
+    description: 'Almofada decorativa com bordado personalizado e acabamento em babado.',
+    longDescription:
+      'Almofada decorativa bordada à mão, com nome, monograma ou desenhos delicados. Perfeita para complementar a cama ou o quarto, com acabamento artesanal.',
+    features: [
+      'Bordado personalizado com nome ou desenho',
+      'Acabamento decorativo em babado',
+      'Ideal para cama, quarto e presentes',
+    ],
+    category: 'cama',
+    hint: 'Personalizável',
+    image: '/images/almofada-decorativa.png',
+    images: [
+      '/images/almofada-decorativa.png',
+      '/images/almofada-maria-fernanda.png',
+      '/images/almofada-ave-maria.png',
+      '/images/almofada-monograma-tc.png',
+      '/images/almofada-monograma-gr.png',
+    ],
+  },
+  {
+    id: 'banho-toalha-banho',
+    name: 'Toalha de banho',
     description: 'Toalha de banho com nome ou monograma bordado e acabamento em renda.',
     longDescription:
       'Toalha de banho macia com nome ou monograma bordado à mão e acabamento delicado em renda. Uma peça prática, elegante e personalizada para o dia a dia ou para presentear.',
@@ -184,37 +221,48 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     images: [
       '/images/toalha-banho-layane.png',
       '/images/toalha-banho-filipe.png',
+      '/images/kit-toalhas-banho-rosto.png',
     ],
   },
   {
-    id: 'banho-toalha-batismo',
-    name: 'Toalha para batismo',
-    description: 'Toalha personalizada para batismo com nome, data e bordado religioso.',
+    id: 'banho-toalha-rosto',
+    name: 'Toalha de rosto',
+    description: 'Toalha de rosto bordada, coordenada ou avulsa, com acabamento artesanal.',
     longDescription:
-      'Toalha para batismo bordada à mão com o nome, a data da celebração e símbolos religiosos. O acabamento em renda, flores e laços transforma a peça em uma recordação especial desse momento de fé.',
+      'Toalha de rosto bordada à mão com nome ou monograma e acabamento em renda. Ideal avulsa ou em conjunto com a toalha de banho.',
     features: [
-      'Nome e data do batismo personalizados',
-      'Bordado religioso com flores e símbolos',
-      'Acabamento delicado em renda e laço',
+      'Bordado personalizado',
+      'Acabamento em renda',
+      'Avulsa ou coordenada com a toalha de banho',
     ],
     category: 'banho',
     hint: 'Personalizável',
-    image: '/images/toalha-batismo-luiza.png',
+    image: '/images/kit-toalhas-banho-rosto.png',
+    images: [
+      '/images/kit-toalhas-banho-rosto.png',
+      '/images/toalha-banho-layane.png',
+      '/images/toalha-banho-filipe.png',
+    ],
   },
   {
-    id: 'banho-kit',
-    name: 'Kit toalhas de banho e rosto',
-    description: 'Toalhas de banho e rosto com bordados coordenados e acabamento em renda.',
+    id: 'banho-toalhinha-social',
+    name: 'Toalhinha social',
+    description: 'Toalhinha social bordada — um mimo delicado para o lavabo ou o enxoval.',
     longDescription:
-      'Kit de toalhas de banho e rosto bordadas à mão, com nome ou monograma e acabamento delicado em renda. Bordados coordenados no mesmo tema para um conjunto elegante.',
+      'Toalhinha social com bordado personalizado e acabamento artesanal. Peça pequena e elegante para o lavabo, presentes ou o enxoval de banho.',
     features: [
-      'Toalhas de banho e rosto coordenadas',
-      'Bordado personalizado com nome ou monograma',
-      'Acabamento em renda',
+      'Bordado personalizado',
+      'Tamanho social / lavabo',
+      'Acabamento artesanal',
     ],
     category: 'banho',
-    hint: 'Conjunto',
+    hint: 'Personalizável',
     image: '/images/kit-toalhas-banho-rosto.png',
+    images: [
+      '/images/kit-toalhas-banho-rosto.png',
+      '/images/toalha-batismo-luiza.png',
+      '/images/toalha-banho-layane.png',
+    ],
   },
 ]
 
