@@ -14,8 +14,15 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-secondary/60 py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:py-12">
       <Container className="flex flex-col items-center gap-5 text-center sm:gap-6">
-        <Link to="/" className="font-display text-xl font-bold">
-          Ateliê <span className="text-primary">GM</span>
+        <Link to="/" className="flex items-center" aria-label={`${BRAND.name} — início`}>
+          <img
+            src="/images/logo.png"
+            alt={BRAND.name}
+            className="size-20 object-contain"
+            width={400}
+            height={394}
+            loading="lazy"
+          />
         </Link>
 
         <nav

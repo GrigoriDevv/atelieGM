@@ -48,10 +48,16 @@ export default function Navbar() {
       <Container className="flex items-center justify-between gap-3">
         <Link
           to="/"
-          className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl"
+          className="flex shrink-0 items-center"
           aria-label={`${BRAND.name} — início`}
         >
-          Ateliê <span className="text-primary">GM</span>
+          <img
+            src="/images/logo.png"
+            alt={BRAND.name}
+            className="size-12 object-contain sm:size-14"
+            width={400}
+            height={394}
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:gap-8 md:flex" aria-label="Navegação principal">
@@ -90,8 +96,16 @@ export default function Navbar() {
               className="flex w-[min(100%,22rem)] flex-col bg-background px-0 pb-[max(1.5rem,env(safe-area-inset-bottom))]"
             >
               <SheetHeader className="px-6">
-                <SheetTitle className="font-display text-left text-xl">
-                  Ateliê <span className="text-primary">GM</span>
+                <SheetTitle className="flex items-center gap-3 text-left font-display text-xl">
+                  <img
+                    src="/images/logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="size-12 object-contain"
+                    width={400}
+                    height={394}
+                  />
+                  {BRAND.name}
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-6 flex flex-1 flex-col gap-1 px-3" aria-label="Menu mobile">
