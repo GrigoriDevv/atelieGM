@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 
 const categoryImages: Partial<Record<CategoryId, string>> = {
   criancas: '/images/kit-berco-maria-helena-1.png',
-  cama: '/images/jogo-lencol-virol-fronha.png',
+  cama: '/images/hero-cama-maria-fernanda.png',
   banho: '/images/kit-toalhas-banho-rosto.png',
   mesa: '/images/kit-safari-paulo-francisco.png',
 }

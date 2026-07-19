@@ -165,7 +165,11 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     ],
     category: 'cama',
     hint: 'Personalizável',
-    image: '/images/jogo-lencol-virol-fronha.png',
+    image: '/images/hero-cama-maria-fernanda.png',
+    images: [
+      '/images/hero-cama-maria-fernanda.png',
+      '/images/jogo-lencol-virol-fronha.png',
+    ],
   },
   {
     id: 'cama-fronhas',
@@ -180,7 +184,11 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     ],
     category: 'cama',
     hint: 'Personalizável',
-    image: '/images/jogo-lencol-virol-fronha.png',
+    image: '/images/hero-cama-maria-fernanda.png',
+    images: [
+      '/images/hero-cama-maria-fernanda.png',
+      '/images/jogo-lencol-virol-fronha.png',
+    ],
   },
   {
     id: 'cama-almofada',

@@ -1,17 +1,61 @@
+import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { BRAND } from '@/config/brand'
 import { WHATSAPP_URL } from '@/config/contact'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/layout'
 import { IconWhatsApp } from '@/components/WhatsAppIcon'
+import { cn } from '@/lib/utils'
 
 const badges = ['100% artesanal', 'Peças personalizadas', 'Enxoval completo']
-const heroImage = '/images/kit-berco-maria-fernanda.png'
+
+const HERO_SLIDES = [
+  {
+    category: 'Para Bebê',
+    src: '/images/kit-berco-maria-fernanda.png',
+    alt: 'Kit berço personalizado do Ateliê GM — linha Para Bebê',
+    focus: 'object-[center_42%]',
+  },
+  {
+    category: 'Banho',
+    src: '/images/kit-toalhas-banho-rosto.png',
+    alt: 'Kit de toalhas de banho e rosto bordadas — linha Banho',
+    focus: 'object-[center_46%]',
+  },
+  {
+    category: 'Cama',
+    src: '/images/hero-cama-maria-fernanda.png',
+    alt: 'Jogo de lençol e fronhas bordados no berço — linha Cama',
+    focus: 'object-[center_48%]',
+  },
+] as const
+
+const HERO_INTERVAL_MS = 15_000
 
 export default function Hero() {
   const words = BRAND.tagline.split(' ')
   const titleStart = words.slice(0, -2).join(' ')
   const titleEnd = words.slice(-2).join(' ')
+  const [active, setActive] = useState(0)
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReduceMotion(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (reduceMotion) return
+    const id = window.setInterval(() => {
+      setActive((current) => (current + 1) % HERO_SLIDES.length)
+    }, HERO_INTERVAL_MS)
+    return () => window.clearInterval(id)
+  }, [reduceMotion])
+
+  const slide = HERO_SLIDES[active]
 
   return (
     <section id="top" className="pt-header pb-6 sm:pb-10 md:pb-14">
@@ -65,23 +109,53 @@ export default function Hero() {
               </ul>
             </div>
 
-            <div className="hero-media-enter media-float relative order-2">
-              <div className="media-frame overflow-hidden rounded-[1.75rem] shadow-[0_28px_56px_-30px_rgba(58,53,64,0.45)]">
-                <img
-                  src={heroImage}
-                  alt="Kit berço personalizado do Ateliê GM com bordado à mão"
-                  className="media-kenburns aspect-[4/5] max-h-[min(52vh,420px)] w-full object-cover object-[center_42%] md:max-h-[520px]"
-                  width={800}
-                  height={1000}
-                  fetchPriority="high"
-                />
+            <div className="hero-media-enter relative order-2">
+              <div
+                className="media-frame relative aspect-[4/5] max-h-[min(52vh,420px)] overflow-hidden rounded-[1.75rem] shadow-[0_28px_56px_-30px_rgba(58,53,64,0.45)] md:max-h-[520px]"
+                role="region"
+                aria-roledescription="carrossel"
+                aria-label="Fotos por categoria: Para Bebê, Banho e Cama"
+              >
+                {HERO_SLIDES.map((item, index) => (
+                  <img
+                    key={item.src}
+                    src={item.src}
+                    alt={item.alt}
+                    className={cn(
+                      'absolute inset-0 size-full object-cover carousel-slide',
+                      item.focus,
+                      index === active ? 'is-active' : 'is-idle',
+                    )}
+                    width={1024}
+                    height={903}
+                    fetchPriority={index === 0 ? 'high' : 'low'}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                ))}
+
+                <div className="absolute inset-x-0 bottom-3 z-10 flex justify-center gap-1.5 px-3">
+                  {HERO_SLIDES.map((item, index) => (
+                    <button
+                      key={item.category}
+                      type="button"
+                      onClick={() => setActive(index)}
+                      aria-label={`Mostrar ${item.category}`}
+                      aria-current={index === active}
+                      className={cn(
+                        'h-1.5 rounded-full bg-card/55 shadow-sm transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]',
+                        index === active ? 'w-6 bg-card' : 'w-1.5 hover:bg-card/80',
+                      )}
+                    />
+                  ))}
+                </div>
               </div>
-              <aside className="absolute -bottom-3 left-3 hidden max-w-[210px] rounded-2xl bg-card/95 p-4 shadow-lg backdrop-blur-sm sm:left-0 sm:block md:-left-5 md:-bottom-4">
+
+              <aside className="absolute -bottom-3 left-3 z-10 hidden max-w-[210px] rounded-2xl bg-card/95 p-4 shadow-lg backdrop-blur-sm sm:left-0 sm:block md:-left-5 md:-bottom-4">
                 <p className="font-display text-lg font-semibold leading-snug">
                   Cada ponto, uma história
                 </p>
                 <span className="text-[0.625rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
-                  Bordado à mão
+                  {slide.category}
                 </span>
               </aside>
             </div>
