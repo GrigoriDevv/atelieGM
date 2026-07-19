@@ -13,7 +13,7 @@ export default function About() {
             className="mb-6 md:mb-8"
           />
           <p className="reveal text-base leading-8 text-muted-foreground md:text-lg">
-            O {BRAND.name} nasceu do amor pelos bordados e pelo cuidado em cada detalhe.
+            A {BRAND.name} nasceu do amor pelos bordados e pelo cuidado em cada detalhe.
             Trabalhamos com peças para crianças e enxoval de cama, mesa e banho — sempre
             com a proposta de criar algo único, feito à mão e pensado especialmente para você.
           </p>

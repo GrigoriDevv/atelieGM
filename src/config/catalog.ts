@@ -298,7 +298,7 @@ export function buildCatalogWhatsAppUrl(
   tier: QualityTier,
 ): string {
   const message = [
-    'Olá! Vim pelo catálogo do Ateliê GM e tenho interesse na seguinte opção:',
+    'Olá! Vim pelo catálogo da GM Arteira e tenho interesse na seguinte opção:',
     '',
     `*${item.name}*`,
     `Categoria: ${categoryLabel}`,

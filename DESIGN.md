@@ -1,5 +1,5 @@
 ---
-name: Ateliê GM
+name: GM Arteira
 description: Bordados artesanais feitos com carinho
 colors:
   linen-paper: "#faf8f5"
@@ -84,7 +84,7 @@ components:
     padding: "24px"
 ---
 
-# Design System: Ateliê GM
+# Design System: GM Arteira
 
 ## 1. Overview
 

@@ -13,7 +13,7 @@ const HERO_SLIDES = [
   {
     category: 'Para Bebê',
     src: '/images/kit-berco-maria-fernanda.png',
-    alt: 'Kit berço personalizado do Ateliê GM — linha Para Bebê',
+    alt: 'Kit berço personalizado da GM Arteira — linha Para Bebê',
     focus: 'object-[center_42%]',
   },
   {

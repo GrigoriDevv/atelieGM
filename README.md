@@ -1,6 +1,6 @@
-# Ateliê GM — Landing Page
+# GM Arteira — Landing Page
 
-Landing page estática para o **Ateliê GM**, ateliê de bordados exclusivos para crianças e enxoval de cama, mesa e banho. Desenvolvida em React + Vite, sem backend — o atendimento é feito via WhatsApp Business.
+Landing page estática para a **GM Arteira**, ateliê de bordados exclusivos para crianças e enxoval de cama, mesa e banho. Desenvolvida em React + Vite, sem backend — o atendimento é feito via WhatsApp Business.
 
 ## Stack
 
@@ -98,7 +98,7 @@ src/
 ├── pages/            # Home e detalhes do produto
 ├── sections/         # Hero, Categorias, Galeria…
 ├── hooks/
-└── index.css         # Tokens Tailwind / tema Ateliê GM
+└── index.css         # Tokens Tailwind / tema GM Arteira
 ```
 
 ## Deploy

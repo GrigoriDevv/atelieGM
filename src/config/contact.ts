@@ -6,11 +6,11 @@ export function buildWhatsAppUrl(message: string): string {
 }
 
 export const WHATSAPP_URL = buildWhatsAppUrl(
-  'Olá! Vim pelo site do Ateliê GM e gostaria de um orçamento.',
+  'Olá! Vim pelo site da GM Arteira e gostaria de um orçamento.',
 )
 
 export const MESSAGES = {
-  default: 'Olá! Vim pelo site do Ateliê GM e gostaria de um orçamento.',
+  default: 'Olá! Vim pelo site da GM Arteira e gostaria de um orçamento.',
   criancas: 'Olá! Gostaria de um orçamento para peças bordadas para bebê.',
   cama: 'Olá! Tenho interesse em enxoval de cama bordado.',
   mesa: 'Olá! Gostaria de saber sobre peças de mesa bordadas.',

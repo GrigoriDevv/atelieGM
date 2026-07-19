@@ -14,7 +14,7 @@ Primary audience: mothers and families assembling a baby layette or choosing a p
 
 ## Product Purpose
 
-Ateliê GM is a static brand site for a hand-embroidery atelier specializing in children's pieces and complementary home textiles (bed, table, bath). There is no checkout backend; the site's job is to show craftsmanship and catalog options so the visitor can choose a piece with clarity, then continue on WhatsApp when ready. Success is fewer idle curiosity chats: people who open WhatsApp already know what they want.
+GM Arteira is a static brand site for a hand-embroidery atelier specializing in children's pieces and complementary home textiles (bed, table, bath). There is no checkout backend; the site's job is to show craftsmanship and catalog options so the visitor can choose a piece with clarity, then continue on WhatsApp when ready. Success is fewer idle curiosity chats: people who open WhatsApp already know what they want.
 
 ## Positioning
 

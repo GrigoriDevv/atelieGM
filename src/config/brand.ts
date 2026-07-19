@@ -1,7 +1,7 @@
 import { buildWhatsAppUrl, MESSAGES, type MessageKey } from './contact'
 
 export const BRAND = {
-  name: 'Ateliê GM',
+  name: 'GM Arteira',
   tagline: 'Bordados artesanais feitos com carinho',
   description:
     'Peças exclusivas para crianças e enxoval de cama, mesa e banho — cada ponto feito à mão, com dedicação e amor pelo artesanato.',
