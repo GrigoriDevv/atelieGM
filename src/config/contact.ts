@@ -11,7 +11,7 @@ export const WHATSAPP_URL = buildWhatsAppUrl(
 
 export const MESSAGES = {
   default: 'Olá! Vim pelo site do Ateliê GM e gostaria de um orçamento.',
-  criancas: 'Olá! Gostaria de um orçamento para bordados infantis.',
+  criancas: 'Olá! Gostaria de um orçamento para peças bordadas para bebê.',
   cama: 'Olá! Tenho interesse em enxoval de cama bordado.',
   mesa: 'Olá! Gostaria de saber sobre peças de mesa bordadas.',
   banho: 'Olá! Tenho interesse em enxoval de banho bordado.',

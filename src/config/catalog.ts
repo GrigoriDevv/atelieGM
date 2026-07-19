@@ -49,81 +49,15 @@ export interface CatalogItem {
 
 export const CATALOG_ITEMS: CatalogItem[] = [
   {
-    id: 'criancas-fraldario',
-    name: 'Fraldário bordado',
-    description: 'Fraldário com bordado personalizado — nomes, ursinhos ou desenhos delicados.',
+    id: 'criancas-fraldas',
+    name: 'Fraldas',
+    description: 'Fraldas de ombro e de boca bordadas com nome, temas infantis e acabamento delicado.',
     longDescription:
-      'O fraldário bordado é a peça prática do dia a dia do bebê, com acabamento artesanal e personalização sob medida. Ideal para organizar fraldas e itens essenciais com charme e cuidado.',
+      'Fraldas bordadas à mão — de ombro ou de boca — com o nome do bebê, desenhos infantis e acabamento em renda ou babado. Peças práticas para o dia a dia e lindas para presentear.',
     features: [
-      'Bordado personalizado com nome ou desenho',
-      'Acabamento artesanal reforçado',
-      'Disponível nas linhas Bebê, Dia a dia e Super Luxo',
-    ],
-    category: 'criancas',
-    hint: 'Personalizável',
-    image: '/images/kit-safari-paulo-francisco.png',
-  },
-  {
-    id: 'criancas-manta',
-    name: 'Manta em tecido piquê 100% algodão',
-    description: 'Manta em piquê 100% algodão com bordado do nome ou monograma do bebê.',
-    longDescription:
-      'Manta em tecido piquê 100% algodão, macia e aconchegante, bordada com o nome ou monograma do bebê. Ideal para o berço, o passeio ou o presente de maternidade.',
-    features: [
-      'Tecido piquê 100% algodão',
-      'Bordado com nome ou monograma',
-      'Perfeita para presentear',
-    ],
-    category: 'criancas',
-    hint: 'Personalizável',
-    image: '/images/manta-pique-algodao.png',
-  },
-  {
-    id: 'criancas-kit-berco',
-    name: 'Kit berço completo',
-    description: 'Conjunto coordenado: lençol, fronha, manta e babador bordados.',
-    longDescription:
-      'Kit completo para o berço, com peças coordenadas e bordadas no mesmo tema. Uma composição elegante e prática para o quarto do bebê.',
-    features: [
-      'Lençol, fronha, manta e babador',
-      'Visual coordenado sob encomenda',
-      'Personalização de nomes e temas',
-    ],
-    category: 'criancas',
-    hint: 'Sob encomenda',
-    image: '/images/kit-berco-maria-fernanda.png',
-    images: [
-      '/images/kit-berco-maria-fernanda.png',
-      '/images/kit-berco-maria-helena-1.png',
-      '/images/kit-berco-maria-helena-2.png',
-      '/images/kit-berco-maria-helena-3.png',
-      '/images/kit-berco-mavie.png',
-    ],
-  },
-  {
-    id: 'criancas-babador',
-    name: 'Babador bordado',
-    description: 'Babador com acabamento artesanal e bordado personalizado.',
-    longDescription:
-      'Babador artesanal com bordado personalizado — útil no dia a dia e com um toque especial de carinho.',
-    features: [
-      'Bordado personalizado',
-      'Acabamento artesanal',
-      'Uso prático no dia a dia',
-    ],
-    category: 'criancas',
-    image: '/images/kit-ursinho-joao-lucas.png',
-  },
-  {
-    id: 'criancas-kit-fraldas-ombro',
-    name: 'Kit Fraldas Ombro Luxo',
-    description: 'Kit de fraldas de ombro com bordado floral, nome do bebê e acabamento em renda.',
-    longDescription:
-      'Kit de fraldas de ombro na linha luxo, bordadas à mão com jardim de flores, borboletas e o nome do bebê. Acabamento delicado em renda e barrados coordenados — práticas no dia a dia e lindas para presentear.',
-    features: [
-      'Bordado floral com o nome do bebê',
-      'Acabamento em renda e barrados coordenados',
-      'Kit com múltiplas fraldas de ombro',
+      'Bordado personalizado com o nome do bebê',
+      'Opções de ombro e de boca',
+      'Acabamento em renda, babado ou barrados coordenados',
     ],
     category: 'criancas',
     hint: 'Personalizável',
@@ -132,22 +66,94 @@ export const CATALOG_ITEMS: CatalogItem[] = [
       '/images/kit-fraldas-ombro-1.png',
       '/images/kit-fraldas-ombro-2.png',
       '/images/kit-fraldas-ombro-3.png',
+      '/images/kit-fraldas-boca-safari.png',
     ],
   },
   {
-    id: 'criancas-kit-fraldas-boca',
-    name: 'Kit fraldas de boca',
-    description: 'Kit de fraldas de boca personalizadas com nome e bordados infantis.',
+    id: 'criancas-mantas',
+    name: 'Mantas',
+    description: 'Mantas em piquê 100% algodão com bordado do nome ou monograma do bebê.',
     longDescription:
-      'Kit de fraldas de boca bordadas à mão com o nome do bebê e desenhos infantis coordenados. Peças práticas para o dia a dia, com acabamento delicado em renda e babado.',
+      'Mantas macias em tecido piquê 100% algodão, bordadas com o nome ou monograma do bebê. Ideais para o berço, o passeio ou o presente de maternidade.',
     features: [
-      'Bordado personalizado com o nome do bebê',
-      'Desenhos infantis coordenados',
-      'Acabamento em renda e babado',
+      'Tecido piquê 100% algodão',
+      'Bordado com nome ou monograma',
+      'Perfeitas para presentear',
     ],
     category: 'criancas',
     hint: 'Personalizável',
-    image: '/images/kit-fraldas-boca-safari.png',
+    image: '/images/manta-pique-algodao.png',
+    images: ['/images/manta-pique-algodao.png', '/images/manta-liz.png'],
+  },
+  {
+    id: 'criancas-cueiros',
+    name: 'Cueiros',
+    description: 'Cueiros bordados, macios e personalizados para envolver o bebê com carinho.',
+    longDescription:
+      'Cueiros artesanais com bordado personalizado — nomes, monogramas ou desenhos delicados. Peças macias para aconchegar o bebê nos primeiros meses.',
+    features: [
+      'Bordado personalizado',
+      'Tecido macio e confortável',
+      'Disponível nas linhas Bebê, Dia a dia e Super Luxo',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-toalhas-fralda',
+    name: 'Toalhas fralda',
+    description: 'Toalhas fralda bordadas, práticas no banho e no dia a dia do bebê.',
+    longDescription:
+      'Toalhas fralda com bordado personalizado e acabamento artesanal. Úteis no banho, na troca e nos cuidados diários, com o charme exclusivo do bordado à mão.',
+    features: [
+      'Bordado personalizado com nome ou desenho',
+      'Uso prático no dia a dia',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-toalha-capuz',
+    name: 'Toalha capuz',
+    description: 'Toalha com capuz bordada — aconchego depois do banho com personalização especial.',
+    longDescription:
+      'Toalha capuz bordada à mão com o nome do bebê e detalhes delicados. Ideal para secar e aquecer com segurança e charme após o banho.',
+    features: [
+      'Capuz bordado e personalizado',
+      'Toque macio',
+      'Perfeita para o banho do bebê',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-toalhinha',
+    name: 'Toalhinha',
+    description: 'Toalhinha bordada para higiene e cuidados do dia a dia.',
+    longDescription:
+      'Toalhinha artesanal com bordado personalizado. Peça pequena e útil para higiene, passeio e rotina do bebê, com acabamento feito à mão.',
+    features: [
+      'Bordado personalizado',
+      'Tamanho prático',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-almofada-amamentacao',
+    name: 'Almofada de amamentação',
+    description: 'Almofada de amamentação bordada, com apoio confortável e personalização delicada.',
+    longDescription:
+      'Almofada de amamentação com bordado personalizado — nomes, monogramas ou temas infantis. Apoio confortável para a mamãe e o bebê, com acabamento artesanal.',
+    features: [
+      'Bordado personalizado',
+      'Formato ergonômico para amamentação',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
   },
   {
     id: 'criancas-kit-leito-maternidade',
@@ -167,6 +173,42 @@ export const CATALOG_ITEMS: CatalogItem[] = [
       '/images/kit-leito-maternidade-1.png',
       '/images/kit-leito-maternidade-2.png',
     ],
+  },
+  {
+    id: 'criancas-kit-berco',
+    name: 'Kit berço',
+    description: 'Conjunto coordenado para o berço, com peças bordadas no mesmo tema.',
+    longDescription:
+      'Kit completo para o berço, com peças coordenadas e bordadas no mesmo tema. Uma composição elegante e prática para o quarto do bebê.',
+    features: [
+      'Peças coordenadas sob encomenda',
+      'Visual personalizado com nomes e temas',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Sob encomenda',
+    image: '/images/kit-berco-maria-fernanda.png',
+    images: [
+      '/images/kit-berco-maria-fernanda.png',
+      '/images/kit-berco-maria-helena-1.png',
+      '/images/kit-berco-maria-helena-2.png',
+      '/images/kit-berco-maria-helena-3.png',
+      '/images/kit-berco-mavie.png',
+    ],
+  },
+  {
+    id: 'criancas-trocador',
+    name: 'Trocador',
+    description: 'Trocador bordado e personalizado para a rotina de troca do bebê.',
+    longDescription:
+      'Trocador artesanal com bordado personalizado e acabamento reforçado. Prático no dia a dia e com o charme exclusivo das peças feitas à mão.',
+    features: [
+      'Bordado personalizado',
+      'Acabamento reforçado',
+      'Ideal para o quarto ou o kit maternidade',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
   },
   {
     id: 'criancas-almofada',
@@ -189,6 +231,48 @@ export const CATALOG_ITEMS: CatalogItem[] = [
       '/images/almofada-monograma-tc.png',
       '/images/almofada-monograma-gr.png',
     ],
+  },
+  {
+    id: 'criancas-ninho-redutor',
+    name: 'Ninho redutor',
+    description: 'Ninho redutor bordado, aconchegante e personalizado para os primeiros meses.',
+    longDescription:
+      'Ninho redutor artesanal com bordado personalizado. Oferece aconchego nos primeiros meses, com acabamento delicado e visual exclusivo.',
+    features: [
+      'Bordado personalizado',
+      'Aconchego para os primeiros meses',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-capa-caderneta',
+    name: 'Capa para caderneta de vacinação',
+    description: 'Capa bordada para a caderneta de vacinação, com nome e detalhes personalizados.',
+    longDescription:
+      'Capa para caderneta de vacinação bordada à mão com o nome do bebê e desenhos delicados. Protege o documento e vira um mimo especial para o enxoval.',
+    features: [
+      'Bordado com o nome do bebê',
+      'Proteção prática para a caderneta',
+      'Acabamento artesanal',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
+  },
+  {
+    id: 'criancas-lencol',
+    name: 'Lençol',
+    description: 'Lençol bordado para berço, com nome, monograma ou desenho à escolha.',
+    longDescription:
+      'Lençol artesanal bordado à mão com nome, monograma ou desenho. Ideal para o berço, com acabamento delicado e personalização sob medida.',
+    features: [
+      'Bordado personalizado',
+      'Acabamento artesanal',
+      'Sob encomenda',
+    ],
+    category: 'criancas',
+    hint: 'Personalizável',
   },
   {
     id: 'cama-jogo-lencol',

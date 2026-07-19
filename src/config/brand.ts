@@ -25,8 +25,9 @@ export interface Category {
 export const CATEGORIES: Category[] = [
   {
     id: 'criancas',
-    title: 'Crianças',
-    description: 'Fraldários, mantas, bodies e peças personalizadas com bordados delicados.',
+    title: 'Para Bebê',
+    description:
+      'Fraldas, mantas, cueiros, toalhas fralda, kit berço, kit leito maternidade e outras peças personalizadas.',
     messageKey: 'criancas',
   },
   {
